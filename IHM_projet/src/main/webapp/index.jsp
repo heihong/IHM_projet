@@ -4,6 +4,6 @@
 <body>
 	<h2>Hello World!</h2>
 
-	<a href="newcontact">Click Here</a>
+	<a href="newContact">Click Here</a>
 </body>
 </html>
