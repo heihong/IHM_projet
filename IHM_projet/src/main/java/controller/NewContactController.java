@@ -7,10 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @Controller
-@RequestMapping("/NewContact")
 public class NewContactController {
+	
 	
 	@RequestMapping(value = "/newContact",method = RequestMethod.GET)
 	public String newContact(Model model){
@@ -18,6 +17,8 @@ public class NewContactController {
 		
 		return "newcontact";// jsp file
 	}
+	
+	
 
 	
 
