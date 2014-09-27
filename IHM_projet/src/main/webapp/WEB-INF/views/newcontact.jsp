@@ -36,31 +36,30 @@
 												x++; //text box increment
 												$(wrapper)
 														.append(
-																'<div><div class="form-group">'
-																
-																// number
-																+'<div class="col-sm-2">'
-																+'<label for="inputNumber" class="control-label">Numéro :</label>'
-																+'</div><div class="col-sm-10">'
-																+'<input type="text" class="form-control" name="number[]" id="number[]" path="adresse" placeholder="Numéro dans la rue">'
-																+'</div>'
-																
-																// street
-																+'<div class="col-sm-2">'
-																+'<label for="inputStreet" class="control-label">Rue :</label>'
-																+'</div><div class="col-sm-10">'
-																+'<input type="text" class="form-control" name="street[]" id="street[]" path="street" placeholder="Rue">'
-																+'</div>'
-																
-																// postCode
-																+'<div class="col-sm-2">'
-																+'<label for="inputStreet" class="control-label">Code postale :</label>'
-																+'</div><div class="col-sm-10">'
-																+'<input type="text" class="form-control" name="postCode[]" id="postCode[]" path="postCode" placeholder="Code postale">'
-																+'</div>'
-														
-																+'</div><a href="#" class="remove_field pull-right"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></div><br /><br />'
-																); //add input box
+																'<div><div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">'
+
+																		// number
+																		+ '<div class="col-sm-2">'
+																		+ '<label for="inputNumber" class="control-label">Numéro :</label>'
+																		+ '</div><div class="col-sm-10">'
+																		+ '<input type="text" class="form-control" name="number[]" id="number[]" path="adresse" placeholder="Numéro dans la rue">'
+																		+ '</div>'
+
+																		// street
+																		+ '<div class="col-sm-2">'
+																		+ '<label for="inputStreet" class="control-label">Rue :</label>'
+																		+ '</div><div class="col-sm-10">'
+																		+ '<input type="text" class="form-control" name="street[]" id="street[]" path="street" placeholder="Rue">'
+																		+ '</div>'
+
+																		// postCode
+																		+ '<div class="col-sm-2">'
+																		+ '<label for="inputStreet" class="control-label">Code postale :</label>'
+																		+ '</div><div class="col-sm-10">'
+																		+ '<input type="text" class="form-control" name="postCode[]" id="postCode[]" path="postCode" placeholder="Code postale">'
+																		+ '</div>'
+
+																		+ '</div><a href="#" class="remove_field pull-right"><span class="glyphicon glyphicon-trash"></span> Supprimer</a><br /><br /></div>'); //add input box
 
 											}
 										});
@@ -110,7 +109,7 @@
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="lastName"
-								id="lastName" path="lastName" placeholder="nom">
+								id="lastName" path="lastName" placeholder="Nom">
 
 						</div>
 					</div>
@@ -121,7 +120,7 @@
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="firstName"
-								id="firstName" path="firstName" placeholder="prénom">
+								id="firstName" path="firstName" placeholder="Prénom">
 
 						</div>
 					</div>
@@ -131,7 +130,7 @@
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="email" id="email"
-								path="email" placeholder="email">
+								path="email" placeholder="Email">
 
 						</div>
 					</div>
@@ -157,7 +156,7 @@
 
 
 						<div>
-							<div class="form-group">
+							<div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 								<div class="col-sm-2">
 									<label for="inputNumber" class="control-label">Numéro :</label>
 								</div>
@@ -185,13 +184,15 @@
 							</div>
 
 						</div>
-						<br /><br />
+						<br />
+						<br />
 
 
 
 					</div>
-					
-					<button class="btn btn-primary add_field_button">Ajouter une adresse</button>
+
+					<button class="btn btn-primary add_field_button">Ajouter
+						une adresse</button>
 
 					<div class=" form-group">
 						<div class="col-sm-12">
