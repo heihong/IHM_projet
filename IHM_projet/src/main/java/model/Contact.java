@@ -1,11 +1,14 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Contact {
 
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String phoneNumber;
+	private ArrayList<Address> addressList;
 
 	
 
@@ -52,6 +55,14 @@ public class Contact {
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	public ArrayList<Address> getAddressList() {
+		return addressList;
+	}
+
+	public void setAddressList(ArrayList<Address> addressList) {
+		this.addressList = addressList;
 	}
 
 }
