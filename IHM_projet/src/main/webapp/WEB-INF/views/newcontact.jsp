@@ -15,6 +15,56 @@
 
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="http://cdn.sanwebe.com/wp-content/themes/sanwebe/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+	// http://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery
+	$(document)
+			.ready(
+					function() {
+						var max_fields = 10; //maximum input boxes allowed
+						var wrapper = $(".input_fields_wrap"); //Fields wrapper
+						var add_button = $(".add_field_button"); //Add button ID
+
+						var x = 1; //initlal text box count
+						$(add_button)
+								.click(
+										function(e) { //on add input button click
+											e.preventDefault();
+											if (x < max_fields) { //max input box allowed
+												x++; //text box increment
+												$(wrapper)
+														.append(
+																'<div><div class="form-group">'
+																
+																// number
+																+'<div class="col-sm-2">'
+																+'<label for="inputPhoneNumber" class="control-label">Adresse :</label>'
+																+'</div><div class="col-sm-10">'
+																+'<input type="text" class="form-control" name="adresse[]" id="adresse[]" path="adresse" placeholder="Adresse">'
+																+'</div>'
+																
+																// street
+																+'<div class="col-sm-2">'
+																+'<label for="inputStreet" class="control-label">Rue :</label>'
+																+'</div><div class="col-sm-10">'
+																+'<input type="text" class="form-control" name="street[]" id="street[]" path="street" placeholder="Rue">'
+																+'</div>'
+														
+																+'</div><a href="#" class="remove_field pull-right">Remove</a></div>'
+																); //add input box
+
+											}
+										});
+
+						$(wrapper).on("click", ".remove_field", function(e) { //user click on remove text
+							e.preventDefault();
+							$(this).parent('div').remove();
+							x--;
+						})
+					});
+</script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
@@ -73,20 +123,59 @@
 							<label for="inputEmail" class="control-label">Email :</label>
 						</div>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="email" id="email" path="email" placeholder="email">
+							<input type="text" class="form-control" name="email" id="email"
+								path="email" placeholder="email">
 
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-2">
-							<label for="inputPhoneNumber" class="control-label">Téléphone :</label>
+							<label for="inputPhoneNumber" class="control-label">Téléphone
+								:</label>
 						</div>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
-								path="phoneNumber" placeholder="Téléphone">
+							<input type="text" class="form-control" name="phoneNumber"
+								id="phoneNumber" path="phoneNumber" placeholder="Téléphone">
 
 						</div>
 					</div>
+
+
+
+
+					<div class="input_fields_wrap">
+						<button class="add_field_button">Ajouter une adresse</button>
+						
+						
+						
+						
+						<div>
+							<div class="form-group">
+								<div class="col-sm-2">
+									<label for="inputNumber" class="control-label">Numéro :</label>
+								</div>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="number[]"
+										id="number[]" path="number" placeholder="Numéro dans la rue">
+								</div>
+								<div class="col-sm-2">
+									<label for="inputStreet" class="control-label">Rue :</label>
+								</div>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="street[]"
+										id="street[]" path="street" placeholder="Rue">
+								</div>
+								
+								
+							</div>
+							
+						</div>
+						
+						
+						
+						
+					</div>
+
 
 					<div class=" form-group">
 						<div class="col-sm-12">
