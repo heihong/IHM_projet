@@ -40,9 +40,9 @@
 																
 																// number
 																+'<div class="col-sm-2">'
-																+'<label for="inputPhoneNumber" class="control-label">Adresse :</label>'
+																+'<label for="inputNumber" class="control-label">Numéro :</label>'
 																+'</div><div class="col-sm-10">'
-																+'<input type="text" class="form-control" name="adresse[]" id="adresse[]" path="adresse" placeholder="Adresse">'
+																+'<input type="text" class="form-control" name="number[]" id="number[]" path="adresse" placeholder="Numéro dans la rue">'
 																+'</div>'
 																
 																// street
