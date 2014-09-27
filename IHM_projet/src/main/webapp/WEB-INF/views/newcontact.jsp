@@ -44,7 +44,7 @@
 
 			<div class="col-md-12">
 				<form:form method="post" action="addContact"
-					modelAttribute="contact" class="form-horizontal" >
+					modelAttribute="contact" class="form-horizontal">
 					<div class="form-group">
 						<div class="col-sm-2">
 							<label for="inputName" class="control-label">Nom :</label>
@@ -57,7 +57,8 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-2">
-							<label for="inputFirstName" class="control-label">Prénom :</label>
+							<label for="inputFirstName" class="control-label">Prénom
+								:</label>
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="firstName"
@@ -70,16 +71,20 @@
 							<label for="inputFirstName" class="control-label">Email :</label>
 						</div>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="email"
-								id=""email"" path=""email"" placeholder="email">
+							<input type="text" class="form-control" name="email" id=""
+								email"" path="" email"" placeholder="email">
 
 						</div>
 					</div>
-					
+
 					<div class=" form-group">
 						<div class="col-sm-12">
 							<div class="form-actions">
 								<div class="pull-right">
+									<button type="reset" class="btn btn-danger">
+										<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Annuler
+									</button>
+									&nbsp;
 									<button type="submit" class="btn btn-success">
 										<span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer
 									</button>
