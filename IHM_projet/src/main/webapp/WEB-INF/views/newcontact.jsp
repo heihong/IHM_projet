@@ -38,7 +38,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="text-primary">Nouveau contact</h1>
+				<h1 class="text-primary">
+					<span class="glyphicon glyphicon-user"></span> Nouveau contact
+				</h1>
 				<hr style="background-color: #428BCA; height: 3px;" draggable="true">
 			</div>
 
@@ -68,11 +70,20 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-2">
-							<label for="inputFirstName" class="control-label">Email :</label>
+							<label for="inputEmail" class="control-label">Email :</label>
 						</div>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="email" id=""
-								email"" path="" email"" placeholder="email">
+							<input type="text" class="form-control" name="email" id="email" path="email" placeholder="email">
+
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputPhoneNumber" class="control-label">Téléphone :</label>
+						</div>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
+								path="phoneNumber" placeholder="Téléphone">
 
 						</div>
 					</div>
