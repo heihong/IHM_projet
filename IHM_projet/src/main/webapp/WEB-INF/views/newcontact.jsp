@@ -51,6 +51,13 @@
 																+'</div><div class="col-sm-10">'
 																+'<input type="text" class="form-control" name="street[]" id="street[]" path="street" placeholder="Rue">'
 																+'</div>'
+																
+																// postCode
+																+'<div class="col-sm-2">'
+																+'<label for="inputStreet" class="control-label">Code postale :</label>'
+																+'</div><div class="col-sm-10">'
+																+'<input type="text" class="form-control" name="postCode[]" id="postCode[]" path="postCode" placeholder="Code postale">'
+																+'</div>'
 														
 																+'</div><a href="#" class="remove_field pull-right">Remove</a></div>'
 																); //add input box
@@ -164,6 +171,13 @@
 								<div class="col-sm-10">
 									<input type="text" class="form-control" name="street[]"
 										id="street[]" path="street" placeholder="Rue">
+								</div>
+								<div class="col-sm-2">
+									<label for="inputPostCode" class="control-label">Code postale :</label>
+								</div>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="postCode[]"
+										id="postCode[]" path="postCode" placeholder="Code postale">
 								</div>
 								
 								
