@@ -59,7 +59,7 @@
 																+'<input type="text" class="form-control" name="postCode[]" id="postCode[]" path="postCode" placeholder="Code postale">'
 																+'</div>'
 														
-																+'</div><a href="#" class="remove_field pull-right">Remove</a></div>'
+																+'</div><a href="#" class="remove_field pull-right"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></div><br /><br />'
 																); //add input box
 
 											}
@@ -151,11 +151,11 @@
 
 
 					<div class="input_fields_wrap">
-						<button class="add_field_button">Ajouter une adresse</button>
-						
-						
-						
-						
+
+
+
+
+
 						<div>
 							<div class="form-group">
 								<div class="col-sm-2">
@@ -173,23 +173,25 @@
 										id="street[]" path="street" placeholder="Rue">
 								</div>
 								<div class="col-sm-2">
-									<label for="inputPostCode" class="control-label">Code postale :</label>
+									<label for="inputPostCode" class="control-label">Code
+										postale :</label>
 								</div>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" name="postCode[]"
 										id="postCode[]" path="postCode" placeholder="Code postale">
 								</div>
-								
-								
-							</div>
-							
-						</div>
-						
-						
-						
-						
-					</div>
 
+
+							</div>
+
+						</div>
+						<br /><br />
+
+
+
+					</div>
+					
+					<button class="btn btn-primary add_field_button">Ajouter une adresse</button>
 
 					<div class=" form-group">
 						<div class="col-sm-12">
