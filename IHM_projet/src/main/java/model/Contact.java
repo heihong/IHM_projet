@@ -4,6 +4,7 @@ public class Contact {
 
 	private String firstName;
 	private String lastName;
+	private String email;
 
 	
 	public Contact() {
@@ -14,10 +15,19 @@ public class Contact {
 		
 		this.firstName=firstName;
 		this.lastName=lastName;
+		this.email = email;
 
 
 	}
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}

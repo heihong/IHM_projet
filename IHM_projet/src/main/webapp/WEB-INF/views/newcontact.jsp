@@ -47,7 +47,7 @@
 					modelAttribute="contact" class="form-horizontal" >
 					<div class="form-group">
 						<div class="col-sm-2">
-							<label for="inputName" class="control-label">Nom</label>
+							<label for="inputName" class="control-label">Nom :</label>
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="lastName"
@@ -57,11 +57,21 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-2">
-							<label for="inputFirstName" class="control-label">Prénom</label>
+							<label for="inputFirstName" class="control-label">Prénom :</label>
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="firstName"
 								id="firstName" path="firstName" placeholder="prénom">
+
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputFirstName" class="control-label">Email :</label>
+						</div>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="email"
+								id=""email"" path=""email"" placeholder="email">
 
 						</div>
 					</div>
