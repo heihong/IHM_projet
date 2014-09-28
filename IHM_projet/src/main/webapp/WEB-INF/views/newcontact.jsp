@@ -140,8 +140,8 @@
 								:</label>
 						</div>
 						<div class="col-sm-10">
-							<input type="text" class="form-control iMask" name="phoneNumber"
-								id="phoneNumber" path="phoneNumber" placeholder="Téléphone" maxlength="10" pattern="[0-9]{10}   alt="{type:'fixed', mask:'## ## ## ## ##', stripMask: true} "/>
+							<input type="text" class="form-control" name="phoneNumber"
+								id="phoneNumber" path="phoneNumber" placeholder="Téléphone" maxlength="10" pattern="[0-9]{10}} "/>
 
 						</div>
 					</div>
