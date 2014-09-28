@@ -1,9 +1,12 @@
 package model;
 
+import javax.validation.constraints.Pattern;
+
 public class Address {
 
 	private String number;
 	private String street;
+	@Pattern(regexp="[0-9]{5}")
 	private String postCode;
 	private String city;
 

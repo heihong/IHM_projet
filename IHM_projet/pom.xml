@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>fr.esiea</groupId>
-  <artifactId>IHM_projet</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>IHM_projet Maven Webapp</name>
-  <url>http://maven.apache.org</url>
- 	<properties>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.esiea</groupId>
+	<artifactId>IHM_projet</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>IHM_projet Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
 		<spring.version>4.0.1.RELEASE</spring.version>
 	</properties>
 
@@ -38,7 +38,7 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-	<!-- Tag lib dependencies -->
+		<!-- Tag lib dependencies -->
 		<dependency>
 			<groupId>org.apache.taglibs</groupId>
 			<artifactId>taglibs-standard-spec</artifactId>
@@ -50,9 +50,20 @@
 			<version>1.2.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+
 
 	</dependencies>
-  <build>
-    <finalName>IHM_projet</finalName>
-  </build>
+	<build>
+		<finalName>IHM_projet</finalName>
+	</build>
 </project>

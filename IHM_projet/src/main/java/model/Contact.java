@@ -2,11 +2,19 @@ package model;
 
 import java.util.ArrayList;
 
-public class Contact {
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
+
+public class Contact {
+	@NotNull 
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@Email
 	private String email;
+	@Size(min=10,max=10)  
 	private String phoneNumber;
 	private ArrayList<Address> addressList;
 	private Boolean isActive;
