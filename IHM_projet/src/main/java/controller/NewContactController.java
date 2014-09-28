@@ -17,7 +17,7 @@ import dao.ContactDAO;
 @Controller
 public class NewContactController {
 	
-	ArrayList <Contact> contactList=new ArrayList<Contact>();
+
 	
 	
 	@RequestMapping(value = "/newContact",method = RequestMethod.GET)
@@ -31,8 +31,9 @@ public class NewContactController {
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
 			   Model model)
 	{
-		contactList.add(contact);
-		 model.addAttribute("Listcontacts", contactList); // link to $Listcontacts
+		ContactDAO.getInstance().addContact(contact); 	// add the new contact to the "database"
+		
+		model.addAttribute("Listcontacts", ContactDAO.getInstance().getContacts()); // link to $Listcontacts
 		
 		return "result"; // jsp file
 	}
