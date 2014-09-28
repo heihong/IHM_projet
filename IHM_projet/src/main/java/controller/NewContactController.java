@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.ContactDAO;
+
 
 
 @Controller
 public class NewContactController {
 	
-	ArrayList <Contact> contactList=new ArrayList<Contact>();
+	
 	
 	
 	@RequestMapping(value = "/newContact",method = RequestMethod.GET)
@@ -31,8 +33,10 @@ public class NewContactController {
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
 			   Model model)
 	{
-		contactList.add(contact);
-		 model.addAttribute("Listcontacts", contactList); // reli $Listcontacts
+		ContactDAO.getInstance().addContact(contact); 	// add the contact to the "data base"
+		
+		
+		 model.addAttribute("Listcontacts", ContactDAO.getInstance().getContacts()); // reli $Listcontacts
 		
 		return "result"; // fichier jsp
 	}
