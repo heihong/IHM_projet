@@ -16,13 +16,15 @@ public class Contact {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Contact(String firstName,String lastName, String email, String phoneNumber) {
-		
+	public Contact(String firstName,String lastName, String email) {		
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.email = email;
-		this.phoneNumber = phoneNumber;
 
+	}
+	public Contact(String firstName,String lastName, String email, String phoneNumber) {
+		this(firstName, lastName, email);
+		this.phoneNumber = phoneNumber;
 	}
 	
 	public String getEmail() {
