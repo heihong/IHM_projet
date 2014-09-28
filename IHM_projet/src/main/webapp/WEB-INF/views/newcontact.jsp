@@ -27,13 +27,13 @@
 						var wrapper = $(".input_fields_wrap"); //Fields wrapper
 						var add_button = $(".add_field_button"); //Add button ID
 
-						var x = 1; //initlal text box count
+						var x = 1; //initlal address box count
 						$(add_button)
 								.click(
-										function(e) { //on add input button click
+										function(e) { //on add address button click
 											e.preventDefault();
-											if (x < max_fields) { //max input box allowed
-												x++; //text box increment
+											if (x < max_fields) { //max address allowed
+												x++; 
 												$(wrapper)
 														.append(
 																'<div><div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">'
@@ -64,7 +64,7 @@
 											}
 										});
 
-						$(wrapper).on("click", ".remove_field", function(e) { //user click on remove text
+						$(wrapper).on("click", ".remove_field", function(e) { //user click on remove
 							e.preventDefault();
 							$(this).parent('div').remove();
 							x--;

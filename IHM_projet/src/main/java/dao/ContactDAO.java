@@ -5,6 +5,11 @@ import java.util.List;
 
 import model.Contact;
 
+/**
+ * ContactDAO is a singleton class used to simulate the database
+ * @author Vincent
+ *
+ */
 public class ContactDAO {
 
 	private static ContactDAO instance = null;
@@ -16,6 +21,7 @@ public class ContactDAO {
 	
 	public static ContactDAO getInstance() {
 		if(instance == null) {
+			// if singleton is not instantiate, we do it.
 			instance = new ContactDAO();
 			init();
 		}
@@ -24,6 +30,8 @@ public class ContactDAO {
 	
 	private static void init() {
 		contactList = new ArrayList<Contact>();
+		
+		// add some contacts to the list to don't have a empty "data base"
 		
 		contactList.add(new Contact("Vincent","Guillebaud","guillebaud@et.esiea.fr"));
 		contactList.add(new Contact("Hei-Hong","Traing","htraing@et.esiea.fr","0678025596"));
