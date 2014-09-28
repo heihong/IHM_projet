@@ -42,5 +42,11 @@ public class ContactDAO {
 		return contactList;
 	}
 	
-	
+	public void addContact(Contact contact) {
+		contactList.add(contact);
+	}
+	public void removeContact(Contact contact) {
+		ArrayList<Contact> c = (ArrayList<Contact>) contactList;
+		c.get(c.indexOf(contact)).removeContact();	// we "remove the contact (we set it inactive)"
+	}
 }
