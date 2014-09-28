@@ -14,6 +14,23 @@
 	src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script>
+
+$(document).ready(function(){
+	var colors = ['#69A3D6', '#CCE45A', '#EEB451', '#E86957', '#8C89B6', '#8FAFA5', '#C778BF' ,'#8E9EB0' ,'#8CB39C' ,'#A3C47B' , '#BFA980'];
+	
+	$(".randomColor").each(function() {
+		
+		var index = Math.floor(Math.random() * colors.length);
+		var color = colors[index];
+	   
+	    $(this).css("background-color", color);
+	});
+	
+	
+	
+	});
+</script>
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
@@ -53,7 +70,7 @@
 				<div class="col-md-12">
 					<ul class="media-list" >
 						<li class="media"><a class="pull-left" ><img
-								class="img-circle media-object" src="http://placehold.it/64x64"></a>
+								class="randomColor img-circle media-object" width="64" height="64" style="border: 1px solid #428bca;"></a>
 							<div class="media-body">
 								<h4 class="media-heading">${listcontact.lastName}&nbsp;${listcontact.firstName}</h4>
 								<h4 class="media-heading">${listcontact.phoneNumber}</h4>
