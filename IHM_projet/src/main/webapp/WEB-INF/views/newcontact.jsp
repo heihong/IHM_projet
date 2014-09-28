@@ -59,7 +59,7 @@
 																		+ '<input type="text" class="form-control" name="postCode[]" id="postCode[]" path="postCode" placeholder="Code postale">'
 																		+ '</div>'
 
-																		+ '</div><a href="#" class="remove_field pull-right"><span class="glyphicon glyphicon-trash"></span> Supprimer</a><br /><br /></div>'); //add input box
+																		+ '</div><a href="" class="remove_field pull-right"><span class="glyphicon glyphicon-trash"></span> Supprimer</a><br /><br /></div>'); //add input box
 
 											}
 										});
@@ -86,7 +86,7 @@
 </style>
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Contact Manager</a>
+				<a class="navbar-brand" >Contact Manager</a>
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse"></div>
 		</div>

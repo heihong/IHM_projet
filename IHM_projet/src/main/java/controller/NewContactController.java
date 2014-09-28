@@ -22,19 +22,19 @@ public class NewContactController {
 	
 	@RequestMapping(value = "/newContact",method = RequestMethod.GET)
 	public String newContact(Model model){
-		model.addAttribute("contact", new Contact()); //model associé à la vue
+		model.addAttribute("contact", new Contact()); //link to the view
 		
 		return "newcontact";// jsp file
 	}
 	
-	@RequestMapping(value = "/addContact", method = RequestMethod.POST) // fonction du bouton add
+	@RequestMapping(value = "/addContact", method = RequestMethod.POST) 
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
 			   Model model)
 	{
 		contactList.add(contact);
-		 model.addAttribute("Listcontacts", contactList); // reli $Listcontacts
+		 model.addAttribute("Listcontacts", contactList); // link to $Listcontacts
 		
-		return "result"; // fichier jsp
+		return "result"; // jsp file
 	}
 
 
