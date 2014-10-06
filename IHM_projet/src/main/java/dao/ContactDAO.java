@@ -36,6 +36,7 @@ public class ContactDAO {
 		
 		contactList.put(0,new Contact(0,"Vincent","Guillebaud","guillebaud@et.esiea.fr"));
 		contactList.put(1,new Contact(1,"Hei-Hong","Traing","htraing@et.esiea.fr","0678025596"));
+		contactList.put(2,new Contact(2,"Tom","Hanks",""));
 		
 	}
 	
