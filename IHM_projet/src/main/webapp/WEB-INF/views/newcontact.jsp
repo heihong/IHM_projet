@@ -56,7 +56,7 @@
 																		+ '<div class="col-sm-2">'
 																		+ '<label for="inputStreet" class="control-label">Code postale :</label>'
 																		+ '</div><div class="col-sm-10">'
-																		+ '<input type="text" class="form-control" name="postCode[]" id="postCode[]" path="postCode" placeholder="Code postale" pattern="[0-9]{5}">'
+																		+ '<input type="text" class="form-control" name="postCode[]" id="postCode[]" path="postCode" placeholder="Code postale">'
 																		+ '</div>'
 
 																		+ '</div><a href="" class="remove_field pull-right"><span class="glyphicon glyphicon-trash"></span> Supprimer</a><br /><br /></div>'); //add input box
@@ -141,7 +141,7 @@
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="phoneNumber"
-								id="phoneNumber" path="phoneNumber" placeholder="Téléphone" maxlength="10" pattern="[0-9]{10}} "/>
+								id="phoneNumber" path="phoneNumber" placeholder="Téléphone" maxlength="10"/>
 
 						</div>
 					</div>

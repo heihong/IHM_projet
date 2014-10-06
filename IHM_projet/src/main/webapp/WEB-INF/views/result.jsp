@@ -1,68 +1,110 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link
-	href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-	rel="stylesheet" type="text/css">
-<script type="text/javascript"
-	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript"
-	src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-$(document).ready(function(){
-	var colors = ['#69A3D6', '#CCE45A', '#EEB451', '#E86957', '#8C89B6', '#8FAFA5', '#C778BF' ,'#8E9EB0' ,'#8CB39C' ,'#A3C47B' , '#BFA980'];
-	
-	$(".randomColor").each(function() {
-		
-		var index = Math.floor(Math.random() * colors.length);
-		var color = colors[index];
-	   
-	    $(this).css("background-color", color);
-	});
-	
-	
-	
-	});
-</script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+<title>New Contact</title>
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
+<style>
+.body {
+	padding-top: 70px
+}
+</style>		<style>
+.body {
+	padding-top: 70px
+}
+</style>
 		<div class="container">
 			<div class="navbar-header">
-				<div class="input-group">
-					<a class="navbar-brand">Contact Manager</a> <span
-						class="input-group-btn"> <a href="newContact" style="width: 80px"
-						class="btn btn-link pull-right"><span
-							class="glyphicon glyphicon-plus-circle glyphicon-plus-sign"></span></a>
-					</span>
-				</div>
+				<a class="navbar-brand" >Contact Manager</a>
 			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse"></div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="input-group">
-					<input type="text" class="form-control"
-						placeholder="Rechercher un contact"> <span
-						class="input-group-btn">
-						<button class="btn btn-primary glyphicon glyphicon-search"
-							type="button" style="width: 80px"></button>
-					</span>
-				</div>
+				<h1 class="text-primary">
+					<span class="glyphicon glyphicon-user"></span> Detail du Contact
+				</h1>
+				<hr style="background-color: #428BCA; height: 3px;" draggable="true">
 			</div>
-		</div>
-		<div class="row">
+
 			<div class="col-md-12">
-				<h1 class="text-primary">A</h1>
-				<hr style="background-color: #428BCA; height: 3px;">
+				<form:form method="post" action="addContact"
+					modelAttribute="contact" class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputName" class="control-label">Nom :</label>
+						</div>
+						<div class="col-sm-10">
+							 <p class="form-control-static">${lastName}</p>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputFirstName" class="control-label">Prénom
+								:</label>
+						</div>
+						<div class="col-sm-10">
+								 <p class="form-control-static">${firstName}</p>
+
+
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputEmail" class="control-label">Email :</label>
+						</div>
+						<div class="col-sm-10">
+						 <p class="form-control-static">${email}</p>
+
+
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputPhoneNumber" class="control-label">Téléphone
+								:</label>
+						</div>
+						<div class="col-sm-10">
+							 <p class="form-control-static">${phoneNumber}</p>
+							
+						</div>
+					</div>
+
+
+					<div class=" form-group">
+						<div class="col-sm-12">
+							<div class="form-actions">
+								<div class="pull-right">
+									<button type="button" class="btn btn-danger">
+										<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Modifier
+									</button>
+									&nbsp;
+									<a type="button" class="btn btn-success" href="showContactList">
+										<span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Liste de Contact
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form:form>
 			</div>
 		</div>
 		<c:forEach items="${Listcontacts}" var="contact">

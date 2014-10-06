@@ -22,12 +22,13 @@ import dao.ContactDAO;
 public class NewContactController {
 	
 
-	@RequestMapping(value = "/newContact",method = RequestMethod.GET)
+	@RequestMapping(value = "/v",method = RequestMethod.GET)
 	public String newContact(Model model){
 		model.addAttribute("contact", new Contact()); //link to the view
 		
 		return "newcontact";// jsp file
 	}
+	
 	
 	@RequestMapping(value = "/addContact", method = RequestMethod.POST) 
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
@@ -47,6 +48,7 @@ public class NewContactController {
 		
 		return "result"; // jsp file
 	}
+	
 	@RequestMapping(value = "/addContact", method = RequestMethod.GET) 
 	public String addContact(Model model)
 	{
@@ -56,7 +58,7 @@ public class NewContactController {
 		
 		
 		model.addAttribute("Listcontacts", sortedContacts); // link to $Listcontacts
-		return "result"; // jsp file
+		return "listecontact"; // jsp file
 	}
 
 
