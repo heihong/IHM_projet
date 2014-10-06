@@ -1,8 +1,7 @@
 package dao;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import model.Contact;
@@ -35,8 +34,8 @@ public class ContactDAO {
 		
 		// add some contacts to the list to don't have a empty "data base"
 		
-		contactList.put(0,new Contact("Vincent","Guillebaud","guillebaud@et.esiea.fr"));
-		contactList.put(1,new Contact("Hei-Hong","Traing","htraing@et.esiea.fr","0678025596"));
+		contactList.put(0,new Contact(0,"Vincent","Guillebaud","guillebaud@et.esiea.fr"));
+		contactList.put(1,new Contact(1,"Hei-Hong","Traing","htraing@et.esiea.fr","0678025596"));
 		
 	}
 	
@@ -45,6 +44,7 @@ public class ContactDAO {
 	}
 	
 	public void addContact(int id, Contact contact) {
+		contact.setId(id);
 		contactList.put(id,contact);
 	}
 	

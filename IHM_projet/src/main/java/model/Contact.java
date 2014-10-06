@@ -16,6 +16,7 @@ public class Contact {
 	private String email;
 	@Size(min=10,max=10)  
 	private String phoneNumber;
+	private int id;
 	private ArrayList<Address> addressList;
 	private Boolean isActive;
 
@@ -25,15 +26,16 @@ public class Contact {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Contact(String firstName,String lastName, String email) {
+	public Contact(int id, String firstName, String lastName, String email) {
+		this.id = id;
 		this.isActive = true; // a contact by default is active. A non active contact is a deleted contact
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.email = email;
 
 	}
-	public Contact(String firstName,String lastName, String email, String phoneNumber) {
-		this(firstName, lastName, email);
+	public Contact(int id, String firstName,String lastName, String email, String phoneNumber) {
+		this(id, firstName, lastName, email);
 		this.phoneNumber = phoneNumber;
 	}
 	
@@ -83,5 +85,10 @@ public class Contact {
 	public void setAddressList(ArrayList<Address> addressList) {
 		this.addressList = addressList;
 	}
-
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getId() {
+		return id;
+	}
 }
