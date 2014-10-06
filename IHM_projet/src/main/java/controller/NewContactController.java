@@ -1,7 +1,6 @@
 package controller;
 
 
-
 import java.util.ArrayList;
 
 import model.Contact;
@@ -18,8 +17,6 @@ import dao.ContactDAO;
 public class NewContactController {
 	
 
-	
-	
 	@RequestMapping(value = "/newContact",method = RequestMethod.GET)
 	public String newContact(Model model){
 		model.addAttribute("contact", new Contact()); //link to the view
@@ -31,10 +28,16 @@ public class NewContactController {
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
 			   Model model)
 	{
-		ContactDAO.getInstance().addContact(contact); 	// add the new contact to the "database"
+		ContactDAO.getInstance().addContact(ContactDAO.getInstance().getContacts().size(),contact); 	// add the new contact to the "database"
 		
 		model.addAttribute("Listcontacts", ContactDAO.getInstance().getContacts()); // link to $Listcontacts
 		
+		return "result"; // jsp file
+	}
+	@RequestMapping(value = "/addContact", method = RequestMethod.GET) 
+	public String addContact(Model model)
+	{
+		model.addAttribute("Listcontacts", ContactDAO.getInstance().getContacts());
 		return "result"; // jsp file
 	}
 

@@ -1,7 +1,9 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import model.Contact;
 
@@ -13,7 +15,7 @@ import model.Contact;
 public class ContactDAO {
 
 	private static ContactDAO instance = null;
-	private static List contactList;
+	private static Map<Integer, Contact> contactList;
 	
 	private ContactDAO () {
 		
@@ -29,24 +31,24 @@ public class ContactDAO {
 	}
 	
 	private static void init() {
-		contactList = new ArrayList<Contact>();
+		contactList  = new HashMap<Integer, Contact>();
 		
 		// add some contacts to the list to don't have a empty "data base"
 		
-		contactList.add(new Contact("Vincent","Guillebaud","guillebaud@et.esiea.fr"));
-		contactList.add(new Contact("Hei-Hong","Traing","htraing@et.esiea.fr","0678025596"));
+		contactList.put(0,new Contact("Vincent","Guillebaud","guillebaud@et.esiea.fr"));
+		contactList.put(1,new Contact("Hei-Hong","Traing","htraing@et.esiea.fr","0678025596"));
 		
 	}
 	
-	public List getContacts() {
+	public Map getContacts() {
 		return contactList;
 	}
 	
-	public void addContact(Contact contact) {
-		contactList.add(contact);
+	public void addContact(int id, Contact contact) {
+		contactList.put(id,contact);
 	}
+	
 	public void removeContact(Contact contact) {
-		ArrayList<Contact> c = (ArrayList<Contact>) contactList;
-		c.get(c.indexOf(contact)).removeContact();	// we "remove the contact (we set it inactive)"
+		
 	}
 }
