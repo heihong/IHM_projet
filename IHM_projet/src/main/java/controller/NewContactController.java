@@ -24,24 +24,28 @@ public class NewContactController {
 		return "newcontact";// jsp file
 	}
 	
+	@RequestMapping(value = "/showContactList", method = RequestMethod.GET) 
+	public String addContact(Model model)
+	{
+		model.addAttribute("contactList", ContactDAO.getInstance().getContacts());
+		return "listecontact"; // jsp file
+	}
+
+
 	@RequestMapping(value = "/addContact", method = RequestMethod.POST) 
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
 			   Model model)
 	{
 		ContactDAO.getInstance().addContact(ContactDAO.getInstance().getContacts().size(),contact); 	// add the new contact to the "database"
 		
-		model.addAttribute("Listcontacts", ContactDAO.getInstance().getContacts()); // link to $Listcontacts
+		model.addAttribute("lastName", contact.getLastName()); 
+		model.addAttribute("firstName", contact.getFirstName());
+		model.addAttribute("email", contact.getEmail()); 
+		model.addAttribute("phoneNumber", contact.getPhoneNumber()); 
 		
 		return "result"; // jsp file
 	}
-	@RequestMapping(value = "/addContact", method = RequestMethod.GET) 
-	public String addContact(Model model)
-	{
-		model.addAttribute("Listcontacts", ContactDAO.getInstance().getContacts());
-		return "result"; // jsp file
-	}
-
-
+	
 	
 
 }
