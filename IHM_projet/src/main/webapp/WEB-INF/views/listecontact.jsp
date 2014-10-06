@@ -72,6 +72,7 @@ $(document).ready(function(){
 						<li class="media"><a class="pull-left" ><img
 								class="randomColor img-circle media-object" width="64" height="64" style="border: 1px solid #428bca;"></a>
 							<div class="media-body">
+							  <a class="btn btn-default pull-right"><span class="glyphicon glyphicon-zoom-in"></span>&nbsp;Détail</a>
 								<h4 class="media-heading">${contact.value.lastName}&nbsp;${contact.value.firstName}</h4>
 								<h4 class="media-heading">${contact.value.phoneNumber}</h4>
 							</div></li>

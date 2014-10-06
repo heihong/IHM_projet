@@ -90,11 +90,11 @@
 							<div class="form-actions">
 								<div class="pull-right">
 									<button type="button" class="btn btn-danger">
-										<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Modifier
+										<span class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
 									</button>
 									&nbsp;
 									<a type="button" class="btn btn-success" href="showContactList">
-										<span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Liste de Contact
+										<span class="glyphicon glyphicon-home"></span>&nbsp;Home
 									</a>
 								</div>
 							</div>
