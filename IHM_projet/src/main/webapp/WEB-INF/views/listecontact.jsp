@@ -65,16 +65,16 @@ $(document).ready(function(){
 				<hr style="background-color: #428BCA; height: 3px;">
 			</div>
 		</div>
-		<c:forEach items="${contactList}" var="contact">
+		<c:forEach items="${Listcontacts}" var="contact">
 			<div class="row" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="col-md-12">
 					<ul class="media-list" >
 						<li class="media"><a class="pull-left" ><img
 								class="randomColor img-circle media-object" width="64" height="64" style="border: 1px solid #428bca;"></a>
 							<div class="media-body">
-							  <a class="btn btn-default pull-right"><span class="glyphicon glyphicon-zoom-in"></span>&nbsp;Détail</a>
-								<h4 class="media-heading">${contact.value.lastName}&nbsp;${contact.value.firstName}</h4>
-								<h4 class="media-heading">${contact.value.phoneNumber}</h4>
+							 <a class="btn btn-success pull-right"><span class="glyphicon glyphicon-zoom-in"></span></a>
+								<h4 class="media-heading">${contact.lastName}&nbsp;${contact.firstName}</h4>
+								<h4 class="media-heading">${contact.phoneNumber}</h4>
 							</div></li>
 					</ul>
 				</div>

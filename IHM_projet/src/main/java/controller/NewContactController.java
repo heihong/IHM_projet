@@ -2,7 +2,12 @@ package controller;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
+import model.ByFirstNameComparator;
+import model.ByLastNameComparator;
 import model.Contact;
 
 import org.springframework.stereotype.Controller;
@@ -24,13 +29,6 @@ public class NewContactController {
 		return "newcontact";// jsp file
 	}
 	
-	@RequestMapping(value = "/showContactList", method = RequestMethod.GET) 
-	public String addContact(Model model)
-	{
-		model.addAttribute("contactList", ContactDAO.getInstance().getContacts());
-		return "listecontact"; // jsp file
-	}
-
 
 	@RequestMapping(value = "/addContact", method = RequestMethod.POST) 
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
@@ -46,6 +44,24 @@ public class NewContactController {
 		return "result"; // jsp file
 	}
 	
+
+	@RequestMapping(value = "/showContactList", method = RequestMethod.GET) 
+	public String showContactList(Model model)
+	{
+		/*Convert the Map into a list*/
+		Map contactMap = ContactDAO.getInstance().getContacts();
+		List<Contact> sortedContacts = new ArrayList<Contact>(contactMap.values());	
+		
+		/*Sort the list by lastname and first name (if two contacts have the same last name)*/
+		Collections.sort(sortedContacts, new ByLastNameComparator(new ByFirstNameComparator()));
+		
+		
+		model.addAttribute("Listcontacts", sortedContacts); // link to $Listcontacts
+		
+		return "listecontact"; // jsp file
+	}
+
+
 	
 
 }

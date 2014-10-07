@@ -19,7 +19,11 @@
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
-		<style>
+<style>
+.body {
+	padding-top: 70px
+}
+</style>		<style>
 .body {
 	padding-top: 70px
 }
@@ -94,7 +98,7 @@
 									</button>
 									&nbsp;
 									<a type="button" class="btn btn-success" href="showContactList">
-										<span class="glyphicon glyphicon-home"></span>&nbsp;Home
+									<span class="glyphicon glyphicon-home"></span>&nbsp;Home
 									</a>
 								</div>
 							</div>
