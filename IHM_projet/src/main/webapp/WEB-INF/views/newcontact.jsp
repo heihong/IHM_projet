@@ -6,17 +6,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script type="text/javascript" src="resources/themes/jquery/js/jquery.min.js"></script>
+<link href="resources/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/themes/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="http://cdn.sanwebe.com/wp-content/themes/sanwebe/js/jquery-1.10.2.min.js"></script>
 
 <script type="text/javascript">
 	// http://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery
