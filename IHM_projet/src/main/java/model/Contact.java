@@ -3,13 +3,13 @@ package model;
 import java.util.ArrayList;
 
 public class Contact {
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String phoneNumber;
-	private int id;
-	private ArrayList<Address> addressList;
-	private Boolean isActive;
+	private String firstName = "";
+	private String lastName = "";
+	private String email = "";
+	private String phoneNumber = "";
+	private int id = -1;
+	private ArrayList<Address> addressList = null;
+	private Boolean isActive = true;
 
 	
 

@@ -36,12 +36,9 @@ public class NewContactController {
 	@RequestMapping(value="/editContact",method=RequestMethod.GET)
 	public String EditContact(@RequestParam("id") int id, Model model)
 	{
-		System.out.print("test");
 		Contact contact=(Contact) ContactDAO.getInstance().getContacts().get(id);
-		model.addAttribute("lastName", contact.getLastName()); 
-		model.addAttribute("firstName", contact.getFirstName());
-		model.addAttribute("email", contact.getEmail()); 
-		model.addAttribute("phoneNumber", contact.getPhoneNumber());
+		model.addAttribute("contact", contact);
+		
 		
 		return "editcontact";
 	}
@@ -52,17 +49,14 @@ public class NewContactController {
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
 			   Model model)
 	{
+		contact.setId(ContactDAO.getInstance().getContacts().size());// edit id
 		ContactDAO.getInstance().addContact(ContactDAO.getInstance().getContacts().size(),contact); 	// add the new contact to the "database"
 		
 	//	System.out.println(contact.getAddressList().get(0).getNumber());
 		
 		model.addAttribute("contact", contact); 
 		
-/*		model.addAttribute("lastName", contact.getLastName()); 
-		model.addAttribute("firstName", contact.getFirstName());
-		model.addAttribute("email", contact.getEmail()); 
-		model.addAttribute("phoneNumber", contact.getPhoneNumber());*/
-		
+
 /*		model.addAttribute("option", address.getOption());
 		model.addAttribute("number", address.getNumber());
 		model.addAttribute("street", address.getStreet());

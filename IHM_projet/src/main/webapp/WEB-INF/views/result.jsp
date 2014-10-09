@@ -130,7 +130,7 @@
 						<div class="col-sm-12">
 							<div class="form-actions">
 								<div class="pull-right">
-									<a type="button" class="btn btn-danger"  href="editContact/id=">
+									<a type="button" class="btn btn-danger"  href="editContact?id=${contact.id}">
 										<span class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
 									</a>
 									&nbsp;

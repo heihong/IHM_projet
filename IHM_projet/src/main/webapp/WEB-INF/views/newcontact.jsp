@@ -33,25 +33,32 @@
 														.append(
 																'<div><div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">'
 
-																		// number
-																		+ '<div class="col-sm-2">'
-																		+ '<label for="inputNumber" class="control-label">Numéro :</label>'
-																		+ '</div><div class="col-sm-10">'
-																		+ '<input type="text" class="form-control" name="number[]" id="number[]" path="adresse" placeholder="Numéro dans la rue">'
+																		// kind address
+																		+ '<div class="col-sm-3 col-md-2">'
+																		+ '<label for="inputkindadress" class="control-label">Type d\'adresse</label>'
+																		+ '</div><div class="col-sm-9 col-md-10">'
+																		+ '<input type="text" class="form-control" name="option" id="option" path="option" placeholder="Type d\'adresse" />'
 																		+ '</div>'
-
-																		// street
-																		+ '<div class="col-sm-2">'
-																		+ '<label for="inputStreet" class="control-label">Rue :</label>'
-																		+ '</div><div class="col-sm-10">'
-																		+ '<input type="text" class="form-control" name="street[]" id="street[]" path="street" placeholder="Rue">'
+																		
+																		// adress
+																		+ '<div class="col-sm-3 col-md-2">'
+																		+ '<label for="inputNumber" class="control-label">Adresse :</label>'
+																		+ '</div><div class="col-sm-9 col-md-10">'
+																		+ '<div class="row">'
+																		+ '<div class="col-sm-2 ">'
+																		+ '<input type="text" class="form-control" name="number" id="number" path="number" placeholder="N° rue" />'
+																		+'</div>'
+																		+'<div class="col-sm-10">'
+																		+'<input type="text" class="form-control" name="street" id="street" path="street" placeholder="Rue" />'
+																		+'</div>'
+																		+'</div>'
 																		+ '</div>'
 
 																		// postCode
-																		+ '<div class="col-sm-2">'
+																		+ '<div class="col-sm-3 col-md-2">'
 																		+ '<label for="inputStreet" class="control-label">Code postale :</label>'
-																		+ '</div><div class="col-sm-10">'
-																		+ '<input type="text" class="form-control" name="postCode[]" id="postCode[]" path="postCode" placeholder="Code postale" pattern="[0-9]{5}">'
+																		+ '</div><div class="col-sm-9 col-md-10">'
+																		+ '<input type="text" class="form-control" name="postCode" id="postCode" path="postCode" placeholder="Code postale" maxlength="5" pattern="[0-9]{5}" />'
 																		+ '</div>'
 
 																		+ '</div><a href="" class="remove_field pull-right"><span class="glyphicon glyphicon-trash"></span> Supprimer</a><br /><br /></div>'); //add input box
@@ -141,38 +148,51 @@
 						</div>
 					</div>
 
-
-
-
 					<div class="input_fields_wrap">
 
-
-
-
-
 						<div>
-							<div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
-								<div class="col-sm-2">
-									<label for="inputNumber" class="control-label">Numéro :</label>
+							<div class="form-group"
+								style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
+								<div class="col-sm-3 col-md-2">
+									<label for="inputkindadress" class="control-label">Type
+										d'adresse</label>
 								</div>
+								<div class="col-sm-9 col-md-10">
+									<input type="text" class="form-control" name="option"
+										id="option" path="option" placeholder="Type d'adresse" />
+
+								</div>
+
+
+								<div class="col-sm-3 col-md-2">
+									<label for="inputNumber" class="control-label">Adresse
+										:</label>
+								</div>
+
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="number[]"
-										id="number[]" path="number" placeholder="Numéro dans la rue">
+									<div class="row">
+										<div class="col-sm-2 ">
+											<input type="text" class="form-control" name="number"
+												id="number" path="number" placeholder="N° rue" />
+
+										</div>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="street"
+												id="street" path="street" placeholder="Rue" />
+
+										</div>
+									</div>
 								</div>
-								<div class="col-sm-2">
-									<label for="inputStreet" class="control-label">Rue :</label>
-								</div>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="street[]"
-										id="street[]" path="street" placeholder="Rue">
-								</div>
-								<div class="col-sm-2">
+
+								<div class="col-sm-3 col-md-2">
 									<label for="inputPostCode" class="control-label">Code
 										postale :</label>
 								</div>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="postCode[]"
-										id="postCode[]" path="postCode" placeholder="Code postale" pattern="[0-9]{5}">
+								<div class="col-sm-9 col-md-10">
+									<input type="text" class="form-control" name="postCode"
+										id="postCode" path="postCode" placeholder="Code postale" maxlength="5"
+										pattern="[0-9]{5}" />
+
 								</div>
 
 
@@ -189,7 +209,7 @@
 					<button class="btn btn-primary add_field_button">Ajouter
 						une adresse</button>
 
-					<div class=" form-group">
+					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="form-actions">
 								<div class="pull-right">

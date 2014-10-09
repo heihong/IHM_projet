@@ -7,15 +7,17 @@ public class Address {
 	private String street;
 	private String postCode;
 	private String city;
+	private String option;
 
 	public Address() {
 	}
 	
-	public Address(String number, String street, String postCode, String city) {
+	public Address(String number, String street, String postCode, String city, String option) {
 		this.number = number;
 		this.street = street;
 		this.postCode = postCode;
 		this.city = city;
+		this.setOption(option);
 	}
 
 	public String getNumber() {
@@ -48,6 +50,14 @@ public class Address {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
 	}
 
 }
