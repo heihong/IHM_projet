@@ -34,7 +34,7 @@ public class NewContactController {
 	}
 	
 	@RequestMapping(value="/editContact",method=RequestMethod.GET)
-	public String EditContact(@RequestParam("id") int id, Model model)
+	public String editContact(@RequestParam("id") int id, Model model)
 	{
 		System.out.print("test");
 		Contact contact=(Contact) ContactDAO.getInstance().getContacts().get(id);
@@ -47,7 +47,17 @@ public class NewContactController {
 	}
 	
 	
-
+	@RequestMapping(value="/deleteContact",method=RequestMethod.GET)
+	public String deleteContact(@RequestParam("id") int id, Model model)
+	{
+		
+		((Contact) ContactDAO.getInstance().getContacts().get(id)).removeContact();	// we remove the contact (logical delete set the boolean active to false)
+		
+		
+		return "deletecontact";
+	}
+	
+	
 	@RequestMapping(value = "/addContact", method = RequestMethod.POST) 
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
 			   Model model)
