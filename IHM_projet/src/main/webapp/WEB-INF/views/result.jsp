@@ -48,7 +48,7 @@
 							<label for="inputName" class="control-label">Nom :</label>
 						</div>
 						<div class="col-sm-10">
-							 <p class="form-control-static">${lastName}</p>
+							 <p class="form-control-static">${contact.lastName}</p>
 
 						</div>
 					</div>
@@ -58,7 +58,7 @@
 								:</label>
 						</div>
 						<div class="col-sm-10">
-								 <p class="form-control-static">${firstName}</p>
+								 <p class="form-control-static">${contact.firstName}</p>
 
 
 						</div>
@@ -68,7 +68,7 @@
 							<label for="inputEmail" class="control-label">Email :</label>
 						</div>
 						<div class="col-sm-10">
-						 <p class="form-control-static">${email}</p>
+						 <p class="form-control-static">${contact.email}</p>
 
 
 						</div>
@@ -79,19 +79,60 @@
 								:</label>
 						</div>
 						<div class="col-sm-10">
-							 <p class="form-control-static">${phoneNumber}</p>
+							 <p class="form-control-static">${contact.phoneNumber}</p>
 							
 						</div>
 					</div>
+					<c:forEach items="${Listaddress}" var="address">
+						<div>
+							<div class="form-group"
+								style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
+								<div class="col-sm-3 col-md-2">
 
+									<label for="inputkindadress" class="control-label">Type
+										d'adresse</label>
+								</div>
+								<div class="col-sm-9 col-md-10">
+									<p class="form-control-static">${address.option}</p>
+
+								</div>
+
+
+								<div class="col-sm-3 col-md-2">
+									<label for="inputNumber" class="control-label">Adresse
+										:</label>
+								</div>
+
+								<div class="col-sm-10">
+									<div class="row">
+										<div class="col-sm-2 ">
+											<p class="form-control-static">${address.number}</p>
+
+										</div>
+										<div class="col-sm-10">
+											<p class="form-control-static">${address.street}</p>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-3 col-md-2">
+									<label for="inputPostCode" class="control-label">Code
+										postale :</label>
+								</div>
+								<div class="col-sm-9 col-md-10">
+									<p class="form-control-static">${address.postCode}</p>
+								</div>
+							</div>
+					</c:forEach>
 
 					<div class=" form-group">
 						<div class="col-sm-12">
 							<div class="form-actions">
 								<div class="pull-right">
-									<button type="button" class="btn btn-danger">
+									<a type="button" class="btn btn-danger"  href="editContact/id=">
 										<span class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
-									</button>
+									</a>
 									&nbsp;
 									<a type="button" class="btn btn-success" href="showContactList">
 									<span class="glyphicon glyphicon-home"></span>&nbsp;Home

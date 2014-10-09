@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import model.Address;
 import model.ByFirstNameComparator;
 import model.ByLastNameComparator;
 import model.Contact;
@@ -15,19 +16,36 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import dao.ContactDAO;
 
 @Controller
 public class NewContactController {
 	
+	ArrayList <Address> AddressList=new ArrayList<Address>();
 
+	
 	@RequestMapping(value = "/newContact",method = RequestMethod.GET)
 	public String newContact(Model model){
 		model.addAttribute("contact", new Contact()); //link to the view
 		
 		return "newcontact";// jsp file
 	}
+	
+	@RequestMapping(value="/editContact",method=RequestMethod.GET)
+	public String EditContact(@RequestParam("id") int id, Model model)
+	{
+		System.out.print("test");
+		Contact contact=(Contact) ContactDAO.getInstance().getContacts().get(id);
+		model.addAttribute("lastName", contact.getLastName()); 
+		model.addAttribute("firstName", contact.getFirstName());
+		model.addAttribute("email", contact.getEmail()); 
+		model.addAttribute("phoneNumber", contact.getPhoneNumber());
+		
+		return "editcontact";
+	}
+	
 	
 
 	@RequestMapping(value = "/addContact", method = RequestMethod.POST) 
@@ -36,10 +54,20 @@ public class NewContactController {
 	{
 		ContactDAO.getInstance().addContact(ContactDAO.getInstance().getContacts().size(),contact); 	// add the new contact to the "database"
 		
-		model.addAttribute("lastName", contact.getLastName()); 
+	//	System.out.println(contact.getAddressList().get(0).getNumber());
+		
+		model.addAttribute("contact", contact); 
+		
+/*		model.addAttribute("lastName", contact.getLastName()); 
 		model.addAttribute("firstName", contact.getFirstName());
 		model.addAttribute("email", contact.getEmail()); 
-		model.addAttribute("phoneNumber", contact.getPhoneNumber()); 
+		model.addAttribute("phoneNumber", contact.getPhoneNumber());*/
+		
+/*		model.addAttribute("option", address.getOption());
+		model.addAttribute("number", address.getNumber());
+		model.addAttribute("street", address.getStreet());
+		model.addAttribute("postCode", address.getPostCode());*/
+		//model.addAttribute("Listaddress", AddressList); 
 		
 		return "result"; // jsp file
 	}
@@ -60,6 +88,7 @@ public class NewContactController {
 		
 		return "listecontact"; // jsp file
 	}
+	
 
 
 	
