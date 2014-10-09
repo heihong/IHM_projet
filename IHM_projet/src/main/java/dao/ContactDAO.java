@@ -41,7 +41,18 @@ public class ContactDAO {
 	}
 	
 	public Map getContacts() {
-		return contactList;
+		/*
+		 * We return only the activated contacts. The unactivated contacts are the deleted contacts
+		 * */
+		Map<Integer, Contact> activatedContacts = new HashMap<Integer, Contact>();
+		
+		for(int i=0; i<contactList.size();i++) {
+			if( ((Contact)contactList.get(i)).isContactActive() ) {
+				activatedContacts.put(i, (Contact)contactList.get(i));
+			}
+		}
+		
+		return activatedContacts;
 	}
 	
 	public void addContact(int id, Contact contact) {
