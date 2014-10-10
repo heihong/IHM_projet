@@ -6,27 +6,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script type="text/javascript" src="resources/themes/jquery/js/jquery.min.js"></script>
-<link href="resources/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="resources/themes/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-<script type="text/javascript" src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="resources/themes/jquery/js/jquery.min.js"></script>
+	<script type="text/javascript"
+	src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
+<link href="resources/themes/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="resources/themes/bootstrap/css/bootstrap-theme.min.css"
+	rel="stylesheet">
+
 
 <title>New Contact</title>
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
-<style>
+		<style>
 .body {
 	padding-top: 70px
 }
-</style>		<style>
+</style>
+		<style>
 .body {
 	padding-top: 70px
 }
 </style>
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" >Contact Manager</a>
+				<a class="navbar-brand">Contact Manager</a>
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse"></div>
 		</div>
@@ -48,7 +54,7 @@
 							<label for="inputName" class="control-label">Nom :</label>
 						</div>
 						<div class="col-sm-10">
-							 <p class="form-control-static">${contact.lastName}</p>
+							<p class="form-control-static">${contact.lastName}</p>
 
 						</div>
 					</div>
@@ -58,7 +64,7 @@
 								:</label>
 						</div>
 						<div class="col-sm-10">
-								 <p class="form-control-static">${contact.firstName}</p>
+							<p class="form-control-static">${contact.firstName}</p>
 
 
 						</div>
@@ -68,7 +74,7 @@
 							<label for="inputEmail" class="control-label">Email :</label>
 						</div>
 						<div class="col-sm-10">
-						 <p class="form-control-static">${contact.email}</p>
+							<p class="form-control-static">${contact.email}</p>
 
 
 						</div>
@@ -79,8 +85,8 @@
 								:</label>
 						</div>
 						<div class="col-sm-10">
-							 <p class="form-control-static">${contact.phoneNumber}</p>
-							
+							<p class="form-control-static">${contact.phoneNumber}</p>
+
 						</div>
 					</div>
 					<c:forEach items="${Listaddress}" var="address">
@@ -126,26 +132,67 @@
 							</div>
 					</c:forEach>
 
+
 					<div class=" form-group">
 						<div class="col-sm-12">
 							<div class="form-actions">
 								<div class="pull-right">
-									<a type="button" class="btn btn-danger"  href="editContact?id=${contact.id}">
-										<span class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
+						
+
+									
+									&nbsp; 
+									<a type="button" class="btn btn-warning"
+										href="editContact?id=${contact.id}"> <span
+										class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
+									</a> 
+									&nbsp; 
+									<a type="button" class="btn btn-primary"
+										href="showContactList"> <span
+										class="glyphicon glyphicon-home"></span>&nbsp;Liste de
+										contacts
 									</a>
-									&nbsp;
-									<a type="button" class="btn btn-success" href="showContactList">
-									<span class="glyphicon glyphicon-home"></span>&nbsp;Home
-									</a>
+									
+									
+									
 								</div>
 							</div>
 						</div>
 					</div>
 				</form:form>
+				
+				
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  							Launch demo modal
+							</button>	
+				
 			</div>
 		</div>
 	</div>
 
+<!-- Button trigger modal -->
+	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  							Launch demo modal
+							</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
