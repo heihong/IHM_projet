@@ -85,7 +85,11 @@ $(document).ready(function(){
 							<div class="media-body">						
 								<h4 class="media-heading">${contact.lastName}&nbsp;${contact.firstName}</h4>
 								<h4 class="media-heading" style="color: #969696;">${contact.phoneNumber}</h4>
-							</div></li>
+							</div>
+							<a type="button" class="btn btn-warning pull-right"> <span
+										class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
+							</a> 
+							</li>
 					</ul>
 				</div>
 			</div>
