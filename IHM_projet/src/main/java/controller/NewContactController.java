@@ -43,6 +43,15 @@ public class NewContactController {
 		return "editcontact";
 	}
 	
+	@RequestMapping(value="/contactDetails",method=RequestMethod.GET)
+	public String contactDetails(@RequestParam("id") int id, Model model)
+	{
+		Contact contact=(Contact) ContactDAO.getInstance().getContacts().get(id);
+		model.addAttribute("contact", contact);
+		
+		
+		return "result";
+	}
 	
 	@RequestMapping(value="/deleteContact",method=RequestMethod.GET)
 	public String deleteContact(@RequestParam("id") int id, Model model)
