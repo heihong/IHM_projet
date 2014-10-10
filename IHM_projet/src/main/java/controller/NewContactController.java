@@ -38,9 +38,16 @@ public class NewContactController {
 	{
 		Contact contact=(Contact) ContactDAO.getInstance().getContacts().get(id);
 		model.addAttribute("contact", contact);
-		
-		
+
 		return "editcontact";
+	}
+	
+	@RequestMapping(value="/saveEditContact",method=RequestMethod.POST)
+	public String saveEditContact(@ModelAttribute("SpringWeb") Contact contact, Model model)
+	{
+		ContactDAO.getInstance().addContact(contact.getId(), contact); 
+		model.addAttribute("contact", contact); // replace to call show detail contact
+		return "result";
 	}
 	
 	@RequestMapping(value="/contactDetails",method=RequestMethod.GET)

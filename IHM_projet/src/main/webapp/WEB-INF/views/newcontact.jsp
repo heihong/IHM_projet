@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -164,19 +164,19 @@
 								</div>
 
 
-								<div class="col-sm-3 col-md-2">
+								<div class="col-sm-3 col-md-2 col-xs-12">
 									<label for="inputNumber" class="control-label">Adresse
 										:</label>
 								</div>
 
-								<div class="col-sm-10">
+								<div class="col-sm-9  col-md-10 col-xs-12">
 									<div class="row">
-										<div class="col-sm-2 ">
+										<div class="col-sm-3 col-xs-12 ">
 											<input type="text" class="form-control" name="number"
 												id="number" path="number" placeholder="N° rue" />
 
 										</div>
-										<div class="col-sm-10">
+										<div class="col-sm-9 col-xs-12 ">
 											<input type="text" class="form-control" name="street"
 												id="street" path="street" placeholder="Rue" />
 

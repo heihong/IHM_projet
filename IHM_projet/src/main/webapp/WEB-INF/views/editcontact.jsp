@@ -38,13 +38,13 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="text-primary">
-					<span class="glyphicon glyphicon-user"></span> Nouveau contact
+					<span class="glyphicon glyphicon-user"></span> Modifier le contact
 				</h1>
 				<hr style="background-color: #428BCA; height: 3px;" draggable="true">
 			</div>
 
 			<div class="col-md-12">
-				<form:form method="post" action="addContact"
+				<form:form method="post" action="saveEditContact"
 					modelAttribute="contact" class="form-horizontal">
 					<div class="form-group">
 						<div class="col-sm-2">
