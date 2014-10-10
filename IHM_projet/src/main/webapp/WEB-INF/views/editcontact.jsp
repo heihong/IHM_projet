@@ -90,6 +90,7 @@
 								maxlength="10" value="${contact.phoneNumber}" />
 
 						</div>
+						<input type="hidden" name="id" id="id" value="${contact.id}">
 					</div>
 					<div class="form-group">
 						<div class="col-sm-12">

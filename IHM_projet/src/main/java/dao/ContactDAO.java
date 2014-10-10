@@ -59,6 +59,10 @@ public class ContactDAO {
 		return activatedContacts;
 	}
 	
+	public void modifyContact(Contact contact) {
+		contactList.put(contact.getId(), contact);
+	}
+	
 	public void addContact(int id, Contact contact) {
 		contact.setId(id);
 		contactList.put(id,contact);
