@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -63,14 +64,24 @@ $(document).ready(function(){
 				<hr style="background-color: #428BCA; height: 3px;">
 			</div>
 		</div>
+		
+
+
 		<c:forEach items="${Listcontacts}" var="contact">
 		
 	
 			<div class="row" style="outline: 1px solid #428bca; cursor: pointer; margin: 1px; padding: 20px 5px 20px 5px;" onclick="window.location='contactDetails?id=${contact.id}';">
 				<div class="col-md-12">
 					<ul class="media-list" >
-						<li class="media"><a class="pull-left" ><img
-								class="randomColor img-circle media-object" width="64" height="64" style="border: 1px solid #428bca;"></a>
+						<li class="media">
+						<div class="imageAndText pull-left" style="position: relative;">
+							<img class="randomColor img-circle media-object" width="64" height="64" style="border: 1px solid #428bca;">
+							<div class="col" style="position: absolute; z-index: 1; top: 2px; left: 3px; text-align: center; color: #ffffff; font-size: 42px;">
+								<div class="col-sm-4">
+						            <p>${fn:toUpperCase(fn:substring(contact.firstName, 0, 1))}</p>
+						        </div>
+					        </div>
+						</div>		
 							<div class="media-body">						
 								<h4 class="media-heading">${contact.lastName}&nbsp;${contact.firstName}</h4>
 								<h4 class="media-heading" style="color: #969696;">${contact.phoneNumber}</h4>
