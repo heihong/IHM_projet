@@ -39,8 +39,12 @@ public class ContactDAO {
 		contactList.put(2,new Contact(2,"Tom","Hanks",""));
 		
 	}
+	public Map getAllContacts() {
+				
+		return contactList;
+	}
 	
-	public Map getContacts() {
+	public Map getActivatedContacts() {
 		/*
 		 * We return only the activated contacts. The unactivated contacts are the deleted contacts
 		 * */

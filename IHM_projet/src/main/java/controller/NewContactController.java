@@ -36,7 +36,7 @@ public class NewContactController {
 	@RequestMapping(value="/editContact",method=RequestMethod.GET)
 	public String editContact(@RequestParam("id") int id, Model model)
 	{
-		Contact contact=(Contact) ContactDAO.getInstance().getContacts().get(id);
+		Contact contact=(Contact) ContactDAO.getInstance().getActivatedContacts().get(id);
 		model.addAttribute("contact", contact);
 
 		return "editcontact";
@@ -53,7 +53,7 @@ public class NewContactController {
 	@RequestMapping(value="/contactDetails",method=RequestMethod.GET)
 	public String contactDetails(@RequestParam("id") int id, Model model)
 	{
-		Contact contact=(Contact) ContactDAO.getInstance().getContacts().get(id);
+		Contact contact=(Contact) ContactDAO.getInstance().getActivatedContacts().get(id);
 		model.addAttribute("contact", contact);
 		
 		
@@ -64,7 +64,7 @@ public class NewContactController {
 	public String deleteContact(@RequestParam("id") int id, Model model)
 	{
 		
-		((Contact) ContactDAO.getInstance().getContacts().get(id)).removeContact();	// we remove the contact (logical delete set the boolean active to false)
+		((Contact) ContactDAO.getInstance().getActivatedContacts().get(id)).removeContact();	// we remove the contact (logical delete set the boolean active to false)
 		
 		
 		return "deletecontact";
@@ -75,8 +75,8 @@ public class NewContactController {
 	public String addContact(@ModelAttribute("SpringWeb") Contact contact,
 			   Model model)
 	{
-		contact.setId(ContactDAO.getInstance().getContacts().size());// edit id
-		ContactDAO.getInstance().addContact(ContactDAO.getInstance().getContacts().size(),contact); 	// add the new contact to the "database"
+		contact.setId(ContactDAO.getInstance().getActivatedContacts().size());// edit id
+		ContactDAO.getInstance().addContact(ContactDAO.getInstance().getActivatedContacts().size(),contact); 	// add the new contact to the "database"
 		
 	//	System.out.println(contact.getAddressList().get(0).getNumber());
 		
@@ -97,7 +97,7 @@ public class NewContactController {
 	public String showContactList(Model model)
 	{
 		/*Convert the Map into a list*/
-		Map contactMap = ContactDAO.getInstance().getContacts();
+		Map contactMap = ContactDAO.getInstance().getActivatedContacts();
 		List<Contact> sortedContacts = new ArrayList<Contact>(contactMap.values());	
 		
 		/*Sort the list by lastname and first name (if two contacts have the same last name)*/
