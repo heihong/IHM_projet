@@ -10,6 +10,7 @@
 <link href="resources/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/themes/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <script type="text/javascript" src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
 
 
 
@@ -124,6 +125,16 @@
 							<input type="text" class="form-control" name="firstName"
 								id="firstName" path="firstName" placeholder="Prénom" required="required">
 
+						</div>
+					</div>
+						<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputDate" class="control-label">Date de naissance :</label>
+						</div>
+						<div class="col-sm-10">
+							 <input type="date"  class="form-control"  name="birthday"
+								id="birthday" path="birthday" ng-model="bday.date" placeholder="Date" ng-required/>
+                
 						</div>
 					</div>
 					<div class="form-group">

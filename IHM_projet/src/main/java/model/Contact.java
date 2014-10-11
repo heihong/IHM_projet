@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Contact {
 	private String firstName = "";
 	private String lastName = "";
+	private String birthday="";
 	private String email = "";
 	private String phoneNumber = "";
 	private int id = -1;
@@ -81,5 +82,13 @@ public class Contact {
 	}
 	public int getId() {
 		return id;
+	}
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
 	}
 }
