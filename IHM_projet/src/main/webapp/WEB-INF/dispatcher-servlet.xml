@@ -24,8 +24,6 @@
 	</bean>
  
 	<mvc:resources mapping="/resources/**" location="/resources/themes"/>
-	<mvc:resources mapping="/WEB-INF/**" location="/WEB-INF/views"/>
- 
 	<mvc:annotation-driven />
  
 </beans>

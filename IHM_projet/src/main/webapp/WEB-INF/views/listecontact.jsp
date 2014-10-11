@@ -14,7 +14,7 @@
 <script>
       document.write('<base href="' + document.location + '" />');
     </script>
-<script type="text/javascript" src="resources/themes/controller/app.js"></script>
+<script type="text/javascript" src="resources/themes/controller/listContactController.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
@@ -86,7 +86,7 @@ $(document).ready(function(){
 							<img class="randomColor img-circle media-object" width="64" height="64" style="border: 1px solid #428bca;">
 							<div class="col" style="position: absolute; z-index: 1; top: 2px; left: 3px; text-align: center; color: #ffffff; font-size: 42px;">
 								<div class="col-sm-4">
-						            <p>${fn:toUpperCase(fn:substring(contact.firstName, 0, 1))}</p>
+						            <p>${fn:toUpperCase(fn:substring(listContact.firstName, 0, 1))}</p>
 						        </div>
 					        </div>
 						</div>		
