@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
 
 import dao.ContactDAO;
 
@@ -103,13 +106,15 @@ public class NewContactController {
 		/*Sort the list by lastname and first name (if two contacts have the same last name)*/
 		Collections.sort(sortedContacts, new ByLastNameComparator(new ByFirstNameComparator()));
 		
+		// change data to JSON
+		Gson gson = new Gson();
+		String listContactsJson = gson.toJson(sortedContacts);
 		
-		model.addAttribute("Listcontacts", sortedContacts); // link to $Listcontacts
+		model.addAttribute("listContactsJson", listContactsJson); // link to $Listcontacts
 		
 		return "listecontact"; // jsp file
 	}
 	
-
 
 	
 

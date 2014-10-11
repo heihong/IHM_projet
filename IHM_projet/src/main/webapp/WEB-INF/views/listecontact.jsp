@@ -10,6 +10,11 @@
 <link href="resources/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/themes/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <script type="text/javascript" src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"src="resources/themes/angular/angular.min.js"></script>
+<script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+<script type="text/javascript" src="resources/themes/controller/app.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
@@ -31,7 +36,7 @@ $(document).ready(function(){
 	});
 </script>
 </head>
-<body>
+<body ng-app="ihm" ng-controller="main">
 	<div class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -50,9 +55,9 @@ $(document).ready(function(){
 			<div class="col-md-12">
 				<div class="input-group">
 					<input type="text" class="form-control"
-						placeholder="Rechercher un contact"> <span
+						placeholder="Rechercher un contact" ng-model="search"> <span
 						class="input-group-btn">
-						<button class="btn btn-primary glyphicon glyphicon-search"
+						<button class="btn btn-primary glyphicon glyphicon-search" ng-click="searhInListContact(search)"
 							type="button" style="width: 80px"></button>
 					</span>
 				</div>
@@ -65,11 +70,14 @@ $(document).ready(function(){
 			</div>
 		</div>
 		
-
-
-		<c:forEach items="${Listcontacts}" var="contact">
+		<c:if test="${not empty listContactsJson}">
+			<script type="text/javascript">
+				var listContactsJson = ${listContactsJson};
+			</script >
+		</c:if>
 		
-	
+		
+			<div ng-repeat="listContact in listContacts">
 			<div class="row" style="outline: 1px solid #428bca; cursor: pointer; margin: 1px; padding: 20px 5px 20px 5px;" onclick="window.location='contactDetails?id=${contact.id}';">
 				<div class="col-md-12">
 					<ul class="media-list" >
@@ -83,8 +91,8 @@ $(document).ready(function(){
 					        </div>
 						</div>		
 							<div class="media-body">						
-								<h4 class="media-heading">${contact.lastName}&nbsp;${contact.firstName}</h4>
-								<h4 class="media-heading" style="color: #969696;">${contact.phoneNumber}</h4>
+								<h4 class="media-heading">{{listContact.lastName}}&nbsp;{{listContact.firstName}}</h4>
+								<h4 class="media-heading" style="color: #969696;">{{listContact.phoneNumber}}</h4>
 							</div>
 							<a type="button" class="btn btn-warning pull-right"> <span
 										class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
@@ -93,7 +101,10 @@ $(document).ready(function(){
 					</ul>
 				</div>
 			</div>
-		</c:forEach>
+		</div>
+		
+
+
 
 	</div>
 
