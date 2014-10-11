@@ -185,8 +185,8 @@
         Voulez-vous supprimer le contact ?
       </div>
       <div class="modal-footer">
-        <a type="button" class="btn btn-default" data-dismiss="modal">Annuler</a>
-        <a type="button" class="btn btn-primary" href="deleteContact?id=${contact.id}">Supprimer</a>
+        <a type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;non</a>
+        <a type="button" class="btn btn-success" href="deleteContact?id=${contact.id}"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;oui</a>
       </div>
     </div>
   </div>
