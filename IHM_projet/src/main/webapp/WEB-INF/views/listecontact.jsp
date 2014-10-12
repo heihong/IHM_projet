@@ -36,7 +36,7 @@ $(document).ready(function(){
 	});
 </script>
 </head>
-<body ng-app="ihm" ng-controller="main">
+<body ng-app="ihm" ng-controller="listContactController">
 	<div class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">

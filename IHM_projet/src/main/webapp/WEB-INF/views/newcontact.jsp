@@ -10,7 +10,11 @@
 <link href="resources/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/themes/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <script type="text/javascript" src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
-
+<script type="text/javascript"src="resources/themes/angular/angular.min.js"></script>
+<script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+<script type="text/javascript" src="resources/themes/controller/newContactController.js"></script>
 
 
 <script type="text/javascript">
@@ -79,12 +83,14 @@
 
 <title>New Contact</title>
 </head>
-<body>
+<body ng-app="ihm" ng-controller="newContactController">
 	<div class="navbar navbar-default navbar-static-top">
 		<style>
 .body {
 	padding-top: 70px
 }
+
+
 </style>
 		<div class="container">
 			<div class="navbar-header">
@@ -147,68 +153,134 @@
 
 						</div>
 					</div>
-
-					<div class="input_fields_wrap">
-
-						<div>
-							<div class="form-group"
-								style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
-								<div class="col-sm-3 col-md-2">
+					  <div id="wrap">
+ 			<div class="container">
+				<div ng-repeat="Address in listAddress"> 
+				<div ng-hide="editing" ng-click="editing = true">	
+				<li><strong>{{Address.kindAddress}}</strong><br\></li>
+				<div>{{Address.number}} {{Address.street}} </div><br\>
+				<div> {{Address.zipCode}} {{Address.city}}</div> 
+				
+				</div>
+				
+				<div ng-show="editing==true"  >
+				 <div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
+				<div class="col-sm-3 col-md-2">
 									<label for="inputkindadress" class="control-label">Type
 										d'adresse</label>
 								</div>
 								<div class="col-sm-9 col-md-10">
-									<input type="text" class="form-control" name="option"
-										id="option" path="option" placeholder="Type d'adresse" />
+								   <input type="text"  class="form-control" name="option"
+										id="option" path="option" placeholder="Type d'adresse"  ng-model="Address.kindAddress" value="Address.kindAddress" ng-required/>
 
 								</div>
-
-
-								<div class="col-sm-3 col-md-2 col-xs-12">
-									<label for="inputNumber" class="control-label">Adresse
-										:</label>
+									<div class="col-sm-3 col-md-2 col-xs-12">
+									<label for="inputNumber" class="control-label">N° et voie :</label>
 								</div>
 
 								<div class="col-sm-9  col-md-10 col-xs-12">
 									<div class="row">
 										<div class="col-sm-3 col-xs-12 ">
 											<input type="text" class="form-control" name="number"
-												id="number" path="number" placeholder="N° rue" />
+												id="number" path="number" placeholder="N° rue"    ng-model="Address.number" value="Address.number"/>
 
 										</div>
 										<div class="col-sm-9 col-xs-12 ">
 											<input type="text" class="form-control" name="street"
-												id="street" path="street" placeholder="Rue" />
+												id="street" path="street" placeholder="Rue" ng-model="Address.street" value="Address.street"/>
+
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-sm-3 col-md-2">
+									<label for="inputPostCode" class="control-label">CP et ville :</label>
+								</div>
+									<div class="col-sm-9 col-md-10 col-xs-12">
+									<div class="row">
+									
+										<div class="col-sm-3 col-xs-12 ">
+											<input type="text" class="form-control" name="postCode"
+												id="postCode" path="postCode" placeholder="Code postale" maxlength="5"
+												pattern="[0-9]{5}"  ng-model="Address.zipCode" value="Address.zipCode"/>
+										</div>
+										<div class="col-sm-9 col-xs-12 ">
+											<input type="text" class="form-control" name="city"
+												id="city" path="city" placeholder="Ville" ng-model="Address.city"/>
+
+										</div>
+									</div>
+								</div>
+
+								 <button class="btn pull-right" type="button" ng-click="editing = false">Save</button>
+				</div>
+				</div>
+				
+				</div>
+            
+            
+					  
+						<div>
+							<div class="form-group"
+								style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
+								<div class="col-sm-3 col-md-2">
+									<label for="inputkindadress" class="control-label">Type
+										d'adresse :</label>
+								</div>
+								<div class="col-sm-9 col-md-10">
+									<input type="text" class="form-control" name="option"
+										id="option" path="option" placeholder="Type d'adresse"   ng-model="kindAddress"/>
+
+								</div>
+
+
+								<div class="col-sm-3 col-md-2 col-xs-12">
+									<label for="inputNumber" class="control-label">N° et voie :</label>
+								</div>
+
+								<div class="col-sm-9  col-md-10 col-xs-12">
+									<div class="row">
+										<div class="col-sm-3 col-xs-12 ">
+											<input type="text" class="form-control" name="number"
+												id="number" path="number" placeholder="N° rue"    ng-model="number"/>
+
+										</div>
+										<div class="col-sm-9 col-xs-12 ">
+											<input type="text" class="form-control" name="street"
+												id="street" path="street" placeholder="Rue" ng-model="street"/>
 
 										</div>
 									</div>
 								</div>
 
 								<div class="col-sm-3 col-md-2">
-									<label for="inputPostCode" class="control-label">Code
-										postale :</label>
+									<label for="inputPostCode" class="control-label">CP et ville :</label>
 								</div>
-								<div class="col-sm-9 col-md-10">
-									<input type="text" class="form-control" name="postCode"
-										id="postCode" path="postCode" placeholder="Code postale" maxlength="5"
-										pattern="[0-9]{5}" />
+								<div class="col-sm-9 col-md-10 col-xs-12">
+									<div class="row">
+									
+										<div class="col-sm-3 col-xs-12 ">
+											<input type="text" class="form-control" name="postCode"
+												id="postCode" path="postCode" placeholder="Code postale" maxlength="5"
+												pattern="[0-9]{5}"  ng-model="zipCode"/>
+										</div>
+										<div class="col-sm-9 col-xs-12 ">
+											<input type="text" class="form-control" name="city"
+												id="city" path="city" placeholder="Ville" ng-model="city"/>
 
+										</div>
+									</div>
 								</div>
 
-
-							</div>
-
+					
+							  <button class="btn pull-right" type="button" ng-click="newAddress()">Save</button>
 						</div>
-						<br />
-						<br />
-
-
-
+					
+				
+					 </div>
 					</div>
-
-					<button class="btn btn-primary add_field_button">Ajouter
-						une adresse</button>
-
+					  <div id="push"></div>
+    </div>
 					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="form-actions">
