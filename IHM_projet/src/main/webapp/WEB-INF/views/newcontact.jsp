@@ -132,6 +132,16 @@
 
 						</div>
 					</div>
+						<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputDate" class="control-label">Naissance :</label>
+						</div>
+						<div class="col-sm-10">
+							 <input type="date"  class="form-control"  name="birthday"
+								id="birthday" path="birthday" ng-model="bday.date" placeholder="Date" ng-required/>
+               
+</div>
+					</div>
 					<div class="form-group">
 						<div class="col-sm-2">
 							<label for="inputEmail" class="control-label">Email :</label>
@@ -153,7 +163,7 @@
 
 						</div>
 					</div>
-					  <div id="wrap">
+					  <div id="wrap"> <!-- http://plnkr.co/edit/2UFfaG?p=preview -->
  			<div class="container">
 				<div ng-repeat="Address in listAddress"> 
 				<div ng-hide="editing" ng-click="editing = true">	
