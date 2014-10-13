@@ -17,8 +17,7 @@ app.controller('listContactController',['$scope', function($scope){
 
 	save();
 	
-	// filter the list by what the user put in the input
-	$scope.searhInListContact=function(search){
+		$scope.searhInListContact=function(search){
 		save(); 
 		if(search=='') 
 		{
@@ -40,6 +39,8 @@ app.controller('listContactController',['$scope', function($scope){
 
 }]);
 
+// http://toddmotto.com/everything-about-custom-filters-in-angular-js/
+//filter the list by what the user put in the input
 app.filter('searchitem', function () {
 	  return function (items, search) {
 	    var filtered = [];

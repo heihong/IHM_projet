@@ -55,7 +55,7 @@ $(document).ready(function(){
 		
 			<div class="col-md-12">
 			
-				<div class="form-group col-md-12">
+				<div class="form-group col-md-12"> <!-- http://stackoverflow.com/questions/24682421/put-search-icon-near-textbox-bootstrap -->
 		            <div class="form-group has-feedback">
 		                <label class="control-label" for=inputsearch>Rechercher un contact :</label>
 		                <input type="text" class="form-control" id="inputsearch" placeholder="Rechercher un contact" ng-model="search"/>
