@@ -96,9 +96,9 @@
 						<div class="col-sm-12">
 							<div class="form-actions">
 								<div class="pull-right">
-									<button type="reset" class="btn btn-danger">
+									<a href="showContactList" class="btn btn-danger">
 										<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Annuler
-									</button>
+									</a>
 									&nbsp;
 									<button type="submit" class="btn btn-success">
 										<span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer
