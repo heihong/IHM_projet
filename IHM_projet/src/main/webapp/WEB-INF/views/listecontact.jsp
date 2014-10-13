@@ -78,7 +78,7 @@ $(document).ready(function(){
 		
 		
 			<div ng-repeat="listContact in listContacts">
-			<div class="row" style="outline: 1px solid #428bca; cursor: pointer; margin: 1px; padding: 20px 5px 20px 5px;" onclick="window.location='contactDetails?id=${listContact.id}';">
+			<div class="row" style="outline: 1px solid #428bca; cursor: pointer; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="col-md-12">
 					<ul class="media-list" >
 						<li class="media">
@@ -94,7 +94,7 @@ $(document).ready(function(){
 								<h4 class="media-heading">{{listContact.lastName}}&nbsp;{{listContact.firstName}}</h4>
 								<h4 class="media-heading" style="color: #969696;">{{listContact.phoneNumber}}</h4>
 							</div>
-							<a type="button" class="btn btn-warning pull-right"> <span
+							<a type="button" class="btn btn-warning pull-right" href="contactDetails?id={{listContact.id}}"> <span
 										class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
 							</a> 
 							</li>
