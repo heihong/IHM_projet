@@ -110,9 +110,9 @@
 
 			<div class="col-md-12">
 			
-				<form:form method="post" action="addContact" id="newContactForm"
+				<form:form  method="post" action="addContact" id="newContactForm"
 					modelAttribute="contact" class="form-horizontal">
-					<div class="form-group">
+					<div class="form-group" >
 						<div class="col-sm-2">
 							<label for="inputName" class="control-label">Nom :</label>
 						</div>
@@ -175,16 +175,50 @@
 				<form:form method="post" action="#" id="newAddressForm"
 					 class="form-horizontal">	
 					
-					  <div id="wrap"> <!-- http://plnkr.co/edit/2UFfaG?p=preview -->
+					  <div id="wrap" > <!-- http://plnkr.co/edit/2UFfaG?p=preview -->
  			<div class="container">
 				<div ng-repeat="Address in listAddress"> 
-				<div ng-hide="editing" ng-click="editing = true">	
-				<li><strong>{{Address.kindAddress}}</strong><br\></li>
-				<div>{{Address.number}} {{Address.street}} </div><br\>
-				<div> {{Address.zipCode}} {{Address.city}}</div> 
-				
+				<div ng-hide="editing" ng-click="editing = true" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
+				<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputkind" class="control-label">Type Adresse :</label>
+						</div>
+						<div class="col-sm-10">
+							<p class="form-control-static">{{Address.kindAddress}}</p>
+
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputName" class="control-label">N° et voie:</label>
+						</div>
+						<div class="col-sm-10">
+							<p class="form-control-static">{{Address.number}} {{Address.street}}</p>
+
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label for="inputName" class="control-label">CP et ville :</label>
+						</div>
+						<div class="col-sm-10">
+							<p class="form-control-static">{{Address.zipCode}} {{Address.city}}</p>
+
+						</div>
+					</div>
+					<div class=" form-group">
+              						<div class="col-sm-12">
+                						<div class="pull-right">
+	                  						<button type="button"ng-hide="editing" ng-click="editing = true" class="btn btn-warning"> <span  
+											class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
+											</button> 
+                						</div>
+              						</div>
+            					</div>
+					
 				</div>
-				
 				<div ng-show="editing==true"  >
 				 <div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="col-sm-3 col-md-2">
@@ -212,7 +246,7 @@
 												id="street" path="street" placeholder="Rue" ng-model="Address.street" value="Address.street"/>
 
 										</div>
-									</div>
+									</div>	
 								</div>
 								
 								<div class="col-sm-3 col-md-2">
@@ -233,8 +267,15 @@
 										</div>
 									</div>
 								</div>
+								<div class=" form-group">
+              						<div class="col-sm-12">
+                						<div class="pull-right">
+                  							<button class="btn btn-success" type="button" ng-click="editing = false"> <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer	</button>
+                						</div>
+              						</div>
+            					</div>
 
-								 <button class="btn pull-right" type="button" ng-click="editing = false">Save</button>
+								
 				</div>
 				</div>
 				
@@ -293,9 +334,15 @@
 										</div>
 									</div>
 								</div>
-
+									<div class=" form-group">
+									        <div class=" col-sm-12">
+									              <div class="pull-right">
+									                   <button class="btn btn-success" type="button" ng-click="newAddress()"> <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer</button>
+									               </div>
+											</div>
+            						</div>
 					
-							  <button class="btn pull-right" type="button" ng-click="newAddress()">Save</button>
+							
 						</div>
 					
 				
