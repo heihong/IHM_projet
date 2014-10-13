@@ -52,15 +52,16 @@ $(document).ready(function(){
 	</div>
 	<div class="container">
 		<div class="row">
+		
 			<div class="col-md-12">
-				<div class="input-group">
-					<input type="text" class="form-control"
-						placeholder="Rechercher un contact" ng-model="search"> <span
-						class="input-group-btn">
-						<button class="btn btn-primary glyphicon glyphicon-search" ng-click="searhInListContact(search)"
-							type="button" style="width: 80px"></button>
-					</span>
-				</div>
+			
+				<div class="form-group col-md-12">
+		            <div class="form-group has-feedback">
+		                <label class="control-label" for=inputsearch>Rechercher un contact :</label>
+		                <input type="text" class="form-control" id="inputsearch" placeholder="Rechercher un contact" ng-model="search"/>
+		                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+		            </div>
+		        </div>
 			</div>
 		</div>
 		<div class="row">
@@ -77,7 +78,7 @@ $(document).ready(function(){
 		</c:if>
 		
 		
-			<div ng-repeat="listContact in listContacts">
+			<div ng-repeat="listContact in listContacts  | searchitem:search">
 			<div class="row" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="col-md-12">
 					<ul class="media-list" >

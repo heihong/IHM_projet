@@ -39,3 +39,12 @@ app.controller('listContactController',['$scope', function($scope){
 	
 
 }]);
+
+app.filter('searchitem', function () {
+	  return function (items, search) {
+	    var filtered = [];
+	    filtered=items.filter(function (value) {
+			  return (new RegExp("^" +search, "i")).test(value.lastName)||(new RegExp("^" +search, "i")).test(value.firstName)||(new RegExp("^" +search, "i")).test(value.phoneNumber);});
+	    return filtered;
+	  };
+	});
