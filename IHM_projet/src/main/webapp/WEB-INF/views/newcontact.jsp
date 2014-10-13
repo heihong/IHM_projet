@@ -109,7 +109,8 @@
 			</div>
 
 			<div class="col-md-12">
-				<form:form method="post" action="addContact"
+			
+				<form:form method="post" action="addContact" id="newContactForm"
 					modelAttribute="contact" class="form-horizontal">
 					<div class="form-group">
 						<div class="col-sm-2">
@@ -163,6 +164,17 @@
 
 						</div>
 					</div>
+					</form:form>
+					
+					
+					
+					
+					
+					
+					
+				<form:form method="post" action="#" id="newAddressForm"
+					 class="form-horizontal">	
+					
 					  <div id="wrap"> <!-- http://plnkr.co/edit/2UFfaG?p=preview -->
  			<div class="container">
 				<div ng-repeat="Address in listAddress"> 
@@ -291,6 +303,8 @@
 					</div>
 					  <div id="push"></div>
     </div>
+    
+    </form:form>
 					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="form-actions">
@@ -299,14 +313,14 @@
 										<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Annuler
 									</button>
 									&nbsp;
-									<button type="submit" class="btn btn-success">
+									<button type="submit" form="newContactForm" class="btn btn-success">
 										<span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer
 									</button>
 								</div>
 							</div>
 						</div>
 					</div>
-				</form:form>
+				
 			</div>
 		</div>
 	</div>

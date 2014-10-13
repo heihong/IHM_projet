@@ -78,7 +78,7 @@ $(document).ready(function(){
 		
 		
 			<div ng-repeat="listContact in listContacts">
-			<div class="row" style="outline: 1px solid #428bca; cursor: pointer; margin: 1px; padding: 20px 5px 20px 5px;">
+			<div class="row" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="col-md-12">
 					<ul class="media-list" >
 						<li class="media">
@@ -86,7 +86,7 @@ $(document).ready(function(){
 							<img class="randomColor img-circle media-object" width="64" height="64" style="border: 1px solid #428bca;">
 							<div class="col" style="position: absolute; z-index: 1; top: 2px; left: 3px; text-align: center; color: #ffffff; font-size: 42px;">
 								<div class="col-sm-4">
-						            <p>{{listContact.firstName.charAt(0)}}</p>
+						            <p>{{listContact.firstName.charAt(0).toUpperCase()}}</p>
 						        </div>
 					        </div>
 						</div>		
