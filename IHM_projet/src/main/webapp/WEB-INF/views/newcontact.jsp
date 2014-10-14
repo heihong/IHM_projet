@@ -180,30 +180,30 @@
 				<div ng-repeat="Address in listAddress"> 
 				<div ng-hide="editing" ng-click="editing = true" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="form-group">
-						<div class="col-sm-2">
+						<div class="col-sm-3">
 							<label for="inputkind" class="control-label">Type Adresse :</label>
 						</div>
-						<div class="col-sm-10">
+						<div class="col-sm-9">
 							<p class="form-control-static">{{Address.kindAddress}}</p>
 
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<div class="col-sm-2">
+						<div class="col-sm-3">
 							<label for="inputName" class="control-label">N° et voie:</label>
 						</div>
-						<div class="col-sm-10">
+						<div class="col-sm-9">
 							<p class="form-control-static">{{Address.number}} {{Address.street}}</p>
 
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<div class="col-sm-2">
+						<div class="col-sm-3">
 							<label for="inputName" class="control-label">CP et ville :</label>
 						</div>
-						<div class="col-sm-10">
+						<div class="col-sm-9">
 							<p class="form-control-static">{{Address.zipCode}} {{Address.city}}</p>
 
 						</div>
@@ -223,7 +223,7 @@
 				 <div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="col-sm-3 col-md-2">
 									<label for="inputkindadress" class="control-label">Type
-										d'adresse</label>
+										d'adresse :</label>
 								</div>
 								<div class="col-sm-9 col-md-10">
 								   <input type="text"  class="form-control" name="option"
