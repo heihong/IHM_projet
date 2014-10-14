@@ -9,12 +9,14 @@
 <script type="text/javascript" src="resources/themes/jquery/js/jquery.min.js"></script>
 <link href="resources/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/themes/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="resources/themes/css/main.css" rel="stylesheet">
 <script type="text/javascript" src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript"src="resources/themes/angular/angular.min.js"></script>
+
 <script>
       document.write('<base href="' + document.location + '" />');
     </script>
-<script type="text/javascript" src="resources/themes/controller/listContactController.js"></script>
+<script type="text/javascript" src="resources/themes/js/listContactController.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
@@ -50,11 +52,47 @@ $(document).ready(function(){
 		</div>
 	</div>
 	<div class="container">
+	
+	<div class="row">
+	<div class="col-md-12">
+		<div class="wrapper">
+		<div class="alphabet">
+            <a class="first"  ng-click="getVal('A')" href="#">A</a>
+            <a href="#" ng-click="getVal('B')" >B</a>
+            <a href="#" ng-click="getVal('C')">C</a>
+            <a href="#" ng-click="getVal('D')">D</a>
+            <a href="#" ng-click="getVal('E')">E</a>
+            <a href="#" ng-click="getVal('F')">F</a>
+            <a href="#" ng-click="getVal('G')">G</a>
+            <a href="#" ng-click="getVal('H')">H</a>
+            <a href="#"ng-click="getVal('I')">I</a>
+            <a href="#" ng-click="getVal('J')">J</a>
+            <a href="#" ng-click="getVal('K')">K</a>
+            <a href="#" ng-click="getVal('L')">L</a>
+            <a href="#" ng-click="getVal('M')">M</a>
+            <a href="#" ng-click="getVal('N')">N</a>
+            <a href="#" ng-click="getVal('O')">O</a>
+            <a href="#" ng-click="getVal('P')">P</a>
+            <a href="#" ng-click="getVal('Q')">Q</a>
+            <a href="#" ng-click="getVal('R')">R</a>
+            <a href="#" ng-click="getVal('S')">S</a>
+            <a href="#" ng-click="getVal('T')">T</a>
+            <a href="#" ng-click="getVal('U')">U</a>
+            <a href="#" ng-click="getVal('V')">V</a>
+            <a href="#" ng-click="getVal('W')">W</a>
+            <a href="#" ng-click="getVal('X')">X</a>
+            <a href="#" ng-click="getVal('Y')">Y</a>
+            <a class="last" href="#" ng-click="getVal('Z')">Z</a></div>
+			</div>
+			</div>
+			
+			
+		</div>
 		<div class="row">
 		
 			<div class="col-md-12">
 			
-				<div class="form-group col-md-12"> <!-- http://stackoverflow.com/questions/24682421/put-search-icon-near-textbox-bootstrap -->
+				<div class="form-group"> <!-- http://stackoverflow.com/questions/24682421/put-search-icon-near-textbox-bootstrap -->
 		            <div class="form-group has-feedback">
 		                <label class="control-label" for=inputsearch>Rechercher un contact :</label>
 		                <input type="text" class="form-control" id="inputsearch" placeholder="Rechercher un contact" ng-model="search"/>
@@ -64,6 +102,12 @@ $(document).ready(function(){
 			</div>
 		</div>
 		<div class="row">
+		<div class="col-md-12">
+		<div class="alert alert-success alert-dismissable text-center">
+	   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		Le contact à bien était supprimé.
+</div>
+		</div>
 			<div class="col-md-12">
 				<h1 class="text-primary">A</h1>
 				<hr style="background-color: #428BCA; height: 3px;">

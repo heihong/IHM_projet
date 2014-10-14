@@ -17,21 +17,14 @@ app.controller('listContactController',['$scope', function($scope){
 
 	save();
 	
-		$scope.searhInListContact=function(search){
-		save(); 
-		if(search=='') 
-		{
-			save();
-		}
-		else
-		{
-			for(i;i<$scope.listContacts.length;i++) 
-			{
+		$scope.getVal=function(search){
+		save();
+		
 				$scope.listContacts=$scope.listContacts.filter(function (value) {
-					  return (new RegExp("^" +search, "i")).test(value.lastName)||(new RegExp("^" +search, "i")).test(value.firstName);});
+					  return (new RegExp("^" +search, "i")).test(value.lastName);});
 				
-			}
-		}
+		
+		
 		
 	};
 	

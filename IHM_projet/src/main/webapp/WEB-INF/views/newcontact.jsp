@@ -14,7 +14,7 @@
 <script>
       document.write('<base href="' + document.location + '" />');
     </script>
-<script type="text/javascript" src="resources/themes/controller/newContactController.js"></script>
+<script type="text/javascript" src="resources/themes/js/newContactController.js"></script>
 
 
 <script type="text/javascript">
