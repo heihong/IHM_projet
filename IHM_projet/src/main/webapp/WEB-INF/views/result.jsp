@@ -71,6 +71,17 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-2">
+							<label for="inputBirthday" class="control-label">Naissance :
+								:</label>
+						</div>
+						<div class="col-sm-10">
+							<p class="form-control-static">${contact.birthday}</p>
+
+
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
 							<label for="inputEmail" class="control-label">Email :</label>
 						</div>
 						<div class="col-sm-10">
