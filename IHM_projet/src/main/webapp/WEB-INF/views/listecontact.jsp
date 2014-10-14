@@ -43,8 +43,7 @@ $(document).ready(function(){
 				<div class="input-group">
 					<a class="navbar-brand">Contact Manager</a> <span
 						class="input-group-btn"> <a href="newContact" style="width: 80px"
-						class="btn btn-link pull-right"><span
-							class="glyphicon glyphicon-plus-circle glyphicon-plus-sign"></span></a>
+						class="btn btn-link pull-right"> <img src="resources/themes/images/ajoutuser.png" class="img-responsive"></a>
 					</span>
 				</div>
 			</div>
