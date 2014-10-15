@@ -39,6 +39,13 @@ $(document).ready(function(){
 </script>
 </head>
 <body ng-app="ihm" ng-controller="listContactController">
+
+<c:if test="${not empty listContactsJson}">
+			<script type="text/javascript">
+				var listContactsJson = ${listContactsJson};
+			</script >
+</c:if>
+		
 	<div class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -52,13 +59,13 @@ $(document).ready(function(){
 		</div>
 	</div>
 	<div class="container">
-	
 	<div class="row">
 	<div class="col-md-12">
 		<div class="wrapper">
 		<div class="alphabet">
-			<a class="first" href="#">Tous</a>
-            <a href="#" ng-click="getVal('A')">A</a>
+		
+			<a class="first " href="#" ng-click="save()"><span class="glyphicon glyphicon-home"></span></a>
+            <a  href="#" ng-click="getVal('A')">A</a>
             <a href="#" ng-click="getVal('B')">B</a>
             <a href="#" ng-click="getVal('C')">C</a>
             <a href="#" ng-click="getVal('D')">D</a>
@@ -122,13 +129,6 @@ $(document).ready(function(){
 			</div>
 		</div>
 		
-		<c:if test="${not empty listContactsJson}">
-			<script type="text/javascript">
-				var listContactsJson = ${listContactsJson};
-			</script >
-		</c:if>
-		
-		
 			<div ng-repeat="listContact in listContacts  | searchitem:search">
 			<div class="row" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="col-md-12">
@@ -147,7 +147,7 @@ $(document).ready(function(){
 								<h4 class="media-heading" style="color: #969696;">{{listContact.phoneNumber}}</h4>
 							</div>
 							<a type="button" class="btn btn-primary pull-right" href="contactDetails?id={{listContact.id}}"> <span
-										class="glyphicon glyphicon-pencil"></span>&nbsp;Détail
+										class="glyphicon glyphicon-zoom-in"></span>&nbsp;Détail
 							</a> 
 							</li>
 					</ul>

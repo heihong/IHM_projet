@@ -8,17 +8,17 @@ app.controller('listContactController',['$scope', function($scope){
 	 var i=0;
 	 
 	 // get the object json in a list ($scope.listContact)
-	var save = function() {
+	$scope.save = function() {
 		if(typeof(listContactsJson) != 'undefined'){
 			 $scope.listContacts = listContactsJson;
 		}
 
 	};
 
-	save();
+	$scope.save();
 	
 		$scope.getVal=function(search){
-		save();
+			$scope.save();
 		
 				$scope.listContacts=$scope.listContacts.filter(function (value) {
 					  return (new RegExp("^" +search, "i")).test(value.lastName);});
