@@ -74,8 +74,9 @@ public class NewContactController {
 		
 		((Contact) ContactDAO.getInstance().getActivatedContacts().get(id)).removeContact();	// we remove the contact (logical delete set the boolean active to false)
 		
+		model.addAttribute("delete", true); 
 		
-		return "deletecontact";
+		return "listecontact";
 	}
 	
 	
@@ -91,12 +92,6 @@ public class NewContactController {
 		model.addAttribute("contact", contact); 
 		
 
-/*		model.addAttribute("option", address.getOption());
-		model.addAttribute("number", address.getNumber());
-		model.addAttribute("street", address.getStreet());
-		model.addAttribute("postCode", address.getPostCode());*/
-		//model.addAttribute("Listaddress", AddressList); 
-		
 		return "result"; // jsp file
 	}
 	

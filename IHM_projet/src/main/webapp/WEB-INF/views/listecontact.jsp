@@ -43,7 +43,7 @@ $(document).ready(function(){
 		<div class="container">
 			<div class="navbar-header">
 				<div class="input-group">
-					<a class="navbar-brand">Contact Manager</a> <span
+					<a class="navbar-brand" href="showContactList">Contact Manager</a> <span
 						class="input-group-btn"> <a href="newContact" style="width: 80px"
 						class="btn btn-link pull-right"> <img src="resources/themes/images/ajoutuser.png" class="img-responsive"></a>
 					</span>
@@ -57,15 +57,16 @@ $(document).ready(function(){
 	<div class="col-md-12">
 		<div class="wrapper">
 		<div class="alphabet">
-            <a class="first"  ng-click="getVal('A')" href="#">A</a>
-            <a href="#" ng-click="getVal('B')" >B</a>
+			<a class="first" href="#">Tous</a>
+            <a href="#" ng-click="getVal('A')">A</a>
+            <a href="#" ng-click="getVal('B')">B</a>
             <a href="#" ng-click="getVal('C')">C</a>
             <a href="#" ng-click="getVal('D')">D</a>
             <a href="#" ng-click="getVal('E')">E</a>
             <a href="#" ng-click="getVal('F')">F</a>
             <a href="#" ng-click="getVal('G')">G</a>
             <a href="#" ng-click="getVal('H')">H</a>
-            <a href="#"ng-click="getVal('I')">I</a>
+            <a href="#" ng-click="getVal('I')">I</a>
             <a href="#" ng-click="getVal('J')">J</a>
             <a href="#" ng-click="getVal('K')">K</a>
             <a href="#" ng-click="getVal('L')">L</a>
@@ -103,13 +104,20 @@ $(document).ready(function(){
 		</div>
 		<div class="row">
 		<div class="col-md-12">
-		<div class="alert alert-success alert-dismissable text-center">
+		
+		<c:set var="delete" value="${delete}"/>  
+		<c:if test="${delete}">  
+		    <div class="alert alert-success alert-dismissable text-center">
 	   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		Le contact à bien était supprimé.
-</div>
+		Le contact a bien été supprimé.
+		</div>
+		</c:if>  
+		
+		
+		
 		</div>
 			<div class="col-md-12">
-				<h1 class="text-primary">A</h1>
+				<h1 class="text-primary">Liste des contacts</h1>
 				<hr style="background-color: #428BCA; height: 3px;">
 			</div>
 		</div>
@@ -138,8 +146,8 @@ $(document).ready(function(){
 								<h4 class="media-heading">{{listContact.lastName}}&nbsp;{{listContact.firstName}}</h4>
 								<h4 class="media-heading" style="color: #969696;">{{listContact.phoneNumber}}</h4>
 							</div>
-							<a type="button" class="btn btn-warning pull-right" href="contactDetails?id={{listContact.id}}"> <span
-										class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
+							<a type="button" class="btn btn-primary pull-right" href="contactDetails?id={{listContact.id}}"> <span
+										class="glyphicon glyphicon-pencil"></span>&nbsp;Détail
 							</a> 
 							</li>
 					</ul>

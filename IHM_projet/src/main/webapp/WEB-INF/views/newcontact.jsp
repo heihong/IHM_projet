@@ -94,7 +94,7 @@
 </style>
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" >Contact Manager</a>
+				<a class="navbar-brand" href="showContactList">Contact Manager</a>
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse"></div>
 		</div>
