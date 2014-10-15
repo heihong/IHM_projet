@@ -22,9 +22,6 @@ app.controller('listContactController',['$scope', function($scope){
 		
 				$scope.listContacts=$scope.listContacts.filter(function (value) {
 					  return (new RegExp("^" +search, "i")).test(value.lastName);});
-				
-		
-		
 		
 	};
 	

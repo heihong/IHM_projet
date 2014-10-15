@@ -62,8 +62,7 @@ $(document).ready(function(){
 	<div class="row">
 	<div class="col-md-12">
 		<div class="wrapper">
-		<div class="alphabet">
-		
+		<div class="alphabet">		
 			<a class="first " href="#" ng-click="save()"><span class="glyphicon glyphicon-home"></span></a>
             <a  href="#" ng-click="getVal('A')">A</a>
             <a href="#" ng-click="getVal('B')">B</a>
