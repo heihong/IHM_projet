@@ -4,13 +4,20 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html ng-app="ihm">
 <head>
-<script type="text/javascript" src="resources/themes/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="resources/themes/jquery/jquery.min.js"></script>
+<script type="text/javascript"src="resources/themes/angular/angular.min.js"></script>
+<script type="text/javascript" src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/themes/datepiker/ui-bootstrap-tpls-0.6.0.js"></script>
 <link href="resources/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/themes/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-<script type="text/javascript" src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript"src="resources/themes/angular/angular.min.js"></script>
+<link href="resources/themes/css/main.css" rel="stylesheet">
+ 
+    
+
+
+
 <script>
       document.write('<base href="' + document.location + '" />');
     </script>
@@ -83,7 +90,7 @@
 
 <title>New Contact</title>
 </head>
-<body ng-app="ihm" ng-controller="newContactController">
+<div ng-controller="newContactController">
 	<div class="navbar navbar-default navbar-static-top">
 		<style>
 .body {
@@ -94,7 +101,7 @@
 </style>
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="showContactList">Contact Manager</a>
+				<a class="navbar-brand" >Contact Manager</a>
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse"></div>
 		</div>
@@ -138,8 +145,15 @@
 							<label for="inputDate" class="control-label">Naissance :</label>
 						</div>
 						<div class="col-sm-10">
-							 <input type="date"  class="form-control"  name="birthday"
-								id="birthday" path="birthday" ng-model="bday.date" placeholder="Date" ng-required/>
+						 <div class="input-group">
+      						<input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="dt" is-open="opened" ng-required="true" />
+     							 <span class="input-group-btn">
+        					<button class="btn btn-default glyphicon glyphicon-calendar" ng-click="open()"></button>
+      							</span>
+    						</div><!-- /input-group -->
+						
+							
+       
                
 </div>
 					</div>

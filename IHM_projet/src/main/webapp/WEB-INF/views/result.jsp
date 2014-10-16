@@ -7,7 +7,7 @@
 <html>
 <head>
 <script type="text/javascript"
-	src="resources/themes/jquery/js/jquery.min.js"></script>
+	src="resources/themes/jquery/jquery.min.js"></script>
 	<script type="text/javascript"
 	src="resources/themes/bootstrap/js/bootstrap.min.js"></script>
 <link href="resources/themes/bootstrap/css/bootstrap.min.css"

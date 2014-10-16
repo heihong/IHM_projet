@@ -1,7 +1,6 @@
 var app = angular.module('ihm', []);
-
-app.controller('listContactController',['$scope', function($scope){ 
-
+var listContactController = function ($scope) {
+		
 	
 	 $scope.listContacts = null;
 	 $scope.search='';
@@ -26,8 +25,8 @@ app.controller('listContactController',['$scope', function($scope){
 	};
 	
 	
-
-}]);
+    
+};
 
 // http://toddmotto.com/everything-about-custom-filters-in-angular-js/
 //filter the list by what the user put in the input

@@ -4,9 +4,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html ng-app="ihm">
 <head>
-<script type="text/javascript" src="resources/themes/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="resources/themes/jquery/jquery.min.js"></script>
 <link href="resources/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/themes/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="resources/themes/css/main.css" rel="stylesheet">
@@ -38,7 +38,7 @@ $(document).ready(function(){
 	});
 </script>
 </head>
-<body ng-app="ihm" ng-controller="listContactController">
+<body  ng-controller="listContactController">
 
 <c:if test="${not empty listContactsJson}">
 			<script type="text/javascript">
@@ -52,7 +52,7 @@ $(document).ready(function(){
 				<div class="input-group">
 					<a class="navbar-brand" href="showContactList">Contact Manager</a> <span
 						class="input-group-btn"> <a href="newContact" style="width: 80px"
-						class="btn btn-link pull-right"> <img src="resources/themes/images/ajoutuser.png" class="img-responsive"></a>
+						class="btn btn-link pull-right"> <img src="resources/themes/img/ajoutuser.png" class="img-responsive"></a>
 					</span>
 				</div>
 			</div>
