@@ -3359,10 +3359,10 @@ angular.module("template/datepicker/popup.html", []).run(["$templateCache", func
     "	<li class=\"divider\"></li>\n" +
     "	<li style=\"padding: 9px;\">\n" +
     "		<span class=\"btn-group\">\n" +
-    "			<button class=\"btn-modal btn-small-modal btn-inverse\" ng-click=\"today()\">Today</button>\n" +
-    "			<button class=\"btn-modal btn-small-modal btn-danger-modal\" ng-click=\"clear()\">Clear</button>\n" +
+    "			<button class=\"btn-modal btn-small-modal btn-inverse\" ng-click=\"today()\">Aujourd'Shui</button>\n" +
+    "			<button class=\"btn-modal btn-small-modal btn-danger-modal\" ng-click=\"clear()\">Effacer</button>\n" +
     "		</span>\n" +
-    "		<button class=\"btn-modal btn-small-modal btn-success-modal pull-right\" ng-click=\"isOpen = false\">Close</button>\n" +
+    "		<button class=\"btn-modal btn-small-modal btn-success-modal pull-right\" ng-click=\"isOpen = false\">Fermer</button>\n" +
     "	</li>\n" +
     "</ul>");
 }]);

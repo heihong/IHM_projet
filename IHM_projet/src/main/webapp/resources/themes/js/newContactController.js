@@ -50,4 +50,23 @@ var newContactController = function ($scope, $timeout) {
 
 	    };
 	    
+	    // get Address
+	    
+	    $scope.listAddress = null;
+	
+		 
+		 // get the object json in a list ($scope.listAddress)
+		$scope.add = function() {
+			if(typeof(listAddressJson) != 'undefined'){
+				 $scope.listAddress = listAddressJson;
+			}
+			
+			
+
+		};
+		
+		$scope.add();
+
+	    
+	    
 };

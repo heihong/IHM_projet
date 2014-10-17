@@ -24,7 +24,7 @@ var listContactController = function ($scope) {
 		
 	};
 	
-	
+	console.log( $scope.listContacts);
     
 };
 
@@ -33,8 +33,11 @@ var listContactController = function ($scope) {
 app.filter('searchitem', function () {
 	  return function (items, search) {
 	    var filtered = [];
-	    filtered=items.filter(function (value) {
-			  return (new RegExp("^" +search, "i")).test(value.lastName)||(new RegExp("^" +search, "i")).test(value.firstName)||(new RegExp("^" +search, "i")).test(value.phoneNumber);});
+	    if(items!=null){
+	    	filtered=items.filter(function (value) {
+				  return (new RegExp("^" +search, "i")).test(value.lastName)||(new RegExp("^" +search, "i")).test(value.firstName)||(new RegExp("^" +search, "i")).test(value.phoneNumber);});
+	    }
+	    
 	    return filtered;
 	  };
 	});

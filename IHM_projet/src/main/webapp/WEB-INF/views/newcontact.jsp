@@ -16,11 +16,6 @@
  
     
 
-
-
-<script>
-      document.write('<base href="' + document.location + '" />');
-    </script>
 <script type="text/javascript" src="resources/themes/js/newContactController.js"></script>
 
 
@@ -84,13 +79,43 @@
 						})
 					});
 </script>
+<script type="text/javascript">
+function doAjaxPost() {  
+	var self = this;
+	  // get the form values  
+	  var option = $('#option').val();
+	  var number = $('#number').val();
+	  var street = $('#street').val();
+	  var postCode = $('#postCode').val();
+	  var city = $('#city').val();
+	   
+	  $.ajax({  
+	    type: "POST",  
+	    url: "/IHM_projet/AddAddress.htm",  
+	    data: "option=" + option + "&number=" + number + "&street="  + street + "&postCode=" +postCode + "&city=" + city ,  
+	    success: function(response){  
+	      // we have the response  
+	      $('#info').html(response);
+	      $('#option').val('');
+	      $('#number').val('');
+	      $('#street').val('');
+	      $('#postCode').val('');
+	      $('#city').val('');
+	    },  
+	    error: function(e){  
+	      alert('Error: ' + e);  
+	    }  
+	  });  
+	}  
+</script>
+
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 
 <title>New Contact</title>
 </head>
-<div ng-controller="newContactController">
+<body ng-controller="newContactController">
 	<div class="navbar navbar-default navbar-static-top">
 		<style>
 .body {
@@ -146,7 +171,7 @@
 						</div>
 						<div class="col-sm-10">
 						 <div class="input-group">
-      						<input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="dt" is-open="opened" ng-required="true" />
+      						<input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="dt" is-open="opened" ng-required="true" name="birthday" id="birthday" path="birthday"/>
      							 <span class="input-group-btn">
         					<button class="btn btn-default glyphicon glyphicon-calendar" ng-click="open()"></button>
       							</span>
@@ -233,6 +258,8 @@
             					</div>
 					
 				</div>
+				
+				
 				<div ng-show="editing==true"  >
 				 <div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 				<div class="col-sm-3 col-md-2">
@@ -351,11 +378,12 @@
 									<div class=" form-group">
 									        <div class=" col-sm-12">
 									              <div class="pull-right">
-									                   <button class="btn btn-success" type="button" ng-click="newAddress()"> <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer</button>
+									                   <button class="btn btn-success" type="button" onclick="doAjaxPost()"> <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer</button>
 									               </div>
 											</div>
             						</div>
-					
+            						
+            						<tr><td colspan="2"><div id="info" style="color: green;"></div></td></tr>
 							
 						</div>
 					
