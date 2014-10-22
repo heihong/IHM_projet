@@ -79,6 +79,9 @@ public class Contact {
 	}
 
 	public ArrayList<Address> getAddressList() {
+		if(addressList == null) {
+			addressList = new ArrayList<Address>();
+		}
 		return addressList;
 	}
 

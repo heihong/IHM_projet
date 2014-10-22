@@ -44,7 +44,7 @@ public class NewContactController {
 		
 		
 		Contact contact=(Contact) ContactDAO.getInstance().getActivatedContacts().get(id);
-		
+		addressList = contact.getAddressList();
 		
 			model.addAttribute("contact", contact);
 	
@@ -55,8 +55,10 @@ public class NewContactController {
 	@RequestMapping(value="/saveEditContact",method=RequestMethod.POST)
 	public String saveEditContact(@ModelAttribute("SpringWeb") Contact contact, Model model)
 	{
+		contact.setAddressList((ArrayList<Address>)addressList);
 		ContactDAO.getInstance().modifyContact(contact); 
 		model.addAttribute("contact", contact); // replace to call show detail contact
+		resetAddressList();
 		return "result";
 	}
 	
