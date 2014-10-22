@@ -148,7 +148,7 @@ public class NewContactController {
 		if(!result.hasErrors()){
 			addressList.remove(id);
 			
-			returnText = addressList.get(numberAddress++).getOption() + " et vous avez entrer "+ addressList.size() + " adresse" ;
+			returnText = "" ;
 		}else{
 			returnText = "Sorry, an error has occur. User has not been added to list.";
 		}

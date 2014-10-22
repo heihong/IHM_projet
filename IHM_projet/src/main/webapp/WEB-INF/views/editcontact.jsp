@@ -40,7 +40,7 @@ function doAjaxPost() {
 	      $('#city').val('');
 	    },  
 	    error: function(e){  
-	      alert('Error: ' + e);  
+	     
 	    }  
 	  });  
 	}  
@@ -60,6 +60,7 @@ function deleteAddress(id) {
 	      // we have the response  
 	    	var div = document.getElementById("address_" + id);
 	    	div.parentNode.removeChild(div);
+	    	$('#addresslist').load(document.URL+' #addresslist');
 	    },  
 	    error: function(e){  
 	      alert('Error: ' + e);  
@@ -155,7 +156,7 @@ function deleteAddress(id) {
  						<div class="container">                    
 					  
 						<div>
-						
+						<div id="addresslist">
 						<c:forEach items="${contact.addressList}" var="address">
 						<div id="address_${contact.addressList.indexOf(address)}">
 							<div class="form-group"
@@ -202,7 +203,7 @@ function deleteAddress(id) {
 							</div>
 							</div>
 					</c:forEach>
-						
+						</div>
 							<div class="form-group"
 								style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 								<div class="col-sm-3 col-md-2">
