@@ -142,5 +142,18 @@ public class NewContactController {
 		return returnText;
 	}
 	
+	@RequestMapping(value="/deleteAddress.htm",method=RequestMethod.POST)
+	public @ResponseBody String deleteAddress(@ModelAttribute(value="id") int id, BindingResult result,Model model ){
+		String returnText;
+		if(!result.hasErrors()){
+			addressList.remove(id);
+			
+			returnText = addressList.get(numberAddress++).getOption() + " et vous avez entrer "+ addressList.size() + " adresse" ;
+		}else{
+			returnText = "Sorry, an error has occur. User has not been added to list.";
+		}
+		return returnText;
+	}
+	
 
 }

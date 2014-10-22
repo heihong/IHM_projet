@@ -45,6 +45,28 @@ function doAjaxPost() {
 	  });  
 	}  
 </script>
+<script type="text/javascript">
+function deleteAddress(id) {  
+	var self = this;
+	
+	  
+	  
+	   
+	  $.ajax({  
+	    type: "POST",  
+	    url: "/IHM_projet/deleteAddress.htm?id="+id,  
+	    data: "" ,  
+	    success: function(response){  
+	      // we have the response  
+	    	var div = document.getElementById("address_" + id);
+	    	div.parentNode.removeChild(div);
+	    },  
+	    error: function(e){  
+	      alert('Error: ' + e);  
+	    }  
+	  });  
+	}  
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 
@@ -135,7 +157,7 @@ function doAjaxPost() {
 						<div>
 						
 						<c:forEach items="${contact.addressList}" var="address">
-						<div>
+						<div id="address_${contact.addressList.indexOf(address)}">
 							<div class="form-group"
 								style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
 								<div class="col-sm-3 col-md-2">
@@ -174,9 +196,10 @@ function doAjaxPost() {
 								<div class="col-sm-9 col-md-10">
 									<p class="form-control-static">${address.postCode}</p>
 								</div>
-								<a href="showContactList" class="btn btn-danger">
+								<a href="#" onclick="deleteAddress(${contact.addressList.indexOf(address)})" class="btn btn-danger">
 										<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Supprimer
 								</a>
+							</div>
 							</div>
 					</c:forEach>
 						
