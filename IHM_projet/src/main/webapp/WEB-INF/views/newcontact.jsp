@@ -111,7 +111,7 @@ function doAjaxPost() {
 						</div>
 						<div class="col-sm-10">
 						 <div class="input-group">
-      						<input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="dt" is-open="opened" ng-required="true" name="birthday" id="birthday" path="birthday"/>
+      						<input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="dt" is-open="opened"  name="birthday" id="birthday" path="birthday"/>
      							 <span class="input-group-btn">
         					<button class="btn btn-default glyphicon glyphicon-calendar" ng-click="open()"></button>
       							</span>
@@ -155,112 +155,8 @@ function doAjaxPost() {
 					 class="form-horizontal">	
 					
 					  <div id="wrap" > <!-- http://plnkr.co/edit/2UFfaG?p=preview -->
- 			<div class="container">
-				<div ng-repeat="Address in listAddress"> 
-				<div ng-hide="editing" ng-click="editing = true" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
-				<div class="form-group">
-						<div class="col-sm-3">
-							<label for="inputkind" class="control-label">Type Adresse :</label>
-						</div>
-						<div class="col-sm-9">
-							<p class="form-control-static">{{Address.kindAddress}}</p>
-
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-3">
-							<label for="inputName" class="control-label">N° et voie:</label>
-						</div>
-						<div class="col-sm-9">
-							<p class="form-control-static">{{Address.number}} {{Address.street}}</p>
-
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-3">
-							<label for="inputName" class="control-label">CP et ville :</label>
-						</div>
-						<div class="col-sm-9">
-							<p class="form-control-static">{{Address.zipCode}} {{Address.city}}</p>
-
-						</div>
-					</div>
-					<div class=" form-group">
-              						<div class="col-sm-12">
-                						<div class="pull-right">
-	                  						<button type="button"ng-hide="editing" ng-click="editing = true" class="btn btn-warning"> <span  
-											class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier
-											</button> 
-                						</div>
-              						</div>
-            					</div>
-					
-				</div>
-				
-				
-				<div ng-show="editing==true"  >
-				 <div class="form-group" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
-				<div class="col-sm-3 col-md-2">
-									<label for="inputkindadress" class="control-label">Type
-										d'adresse :</label>
-								</div>
-								<div class="col-sm-9 col-md-10">
-								   <input type="text"  class="form-control" name="option"
-										id="option" path="option" placeholder="Type d'adresse"  ng-model="Address.kindAddress" value="Address.kindAddress" ng-required/>
-
-								</div>
-									<div class="col-sm-3 col-md-2 col-xs-12">
-									<label for="inputNumber" class="control-label">N° et voie :</label>
-								</div>
-
-								<div class="col-sm-9  col-md-10 col-xs-12">
-									<div class="row">
-										<div class="col-sm-3 col-xs-12 ">
-											<input type="text" class="form-control" name="number"
-												id="number" path="number" placeholder="N° rue"    ng-model="Address.number" value="Address.number"/>
-
-										</div>
-										<div class="col-sm-9 col-xs-12 ">
-											<input type="text" class="form-control" name="street"
-												id="street" path="street" placeholder="Rue" ng-model="Address.street" value="Address.street"/>
-
-										</div>
-									</div>	
-								</div>
-								
-								<div class="col-sm-3 col-md-2">
-									<label for="inputPostCode" class="control-label">CP et ville :</label>
-								</div>
-									<div class="col-sm-9 col-md-10 col-xs-12">
-									<div class="row">
-									
-										<div class="col-sm-3 col-xs-12 ">
-											<input type="text" class="form-control" name="postCode"
-												id="postCode" path="postCode" placeholder="Code postale" maxlength="5"
-												pattern="[0-9]{5}"  ng-model="Address.zipCode" value="Address.zipCode"/>
-										</div>
-										<div class="col-sm-9 col-xs-12 ">
-											<input type="text" class="form-control" name="city"
-												id="city" path="city" placeholder="Ville" ng-model="Address.city"/>
-
-										</div>
-									</div>
-								</div>
-								<div class=" form-group">
-              						<div class="col-sm-12">
-                						<div class="pull-right">
-                  							<button class="btn btn-success" type="button" ng-click="editing = false"> <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer	</button>
-                						</div>
-              						</div>
-            					</div>
-
-								
-				</div>
-				</div>
-				
-				</div>
+ 						<div class="container">
+			
             
             
 					  
@@ -273,7 +169,7 @@ function doAjaxPost() {
 								</div>
 								<div class="col-sm-9 col-md-10">
 									<input type="text" class="form-control" name="option"
-										id="option" path="option" placeholder="Type d'adresse"   ng-model="kindAddress"/>
+										id="option" path="option" placeholder="Type d'adresse" />
 
 								</div>
 
@@ -286,12 +182,12 @@ function doAjaxPost() {
 									<div class="row">
 										<div class="col-sm-3 col-xs-12 ">
 											<input type="text" class="form-control" name="number"
-												id="number" path="number" placeholder="N° rue"    ng-model="number"/>
+												id="number" path="number" placeholder="N° rue" />
 
 										</div>
 										<div class="col-sm-9 col-xs-12 ">
 											<input type="text" class="form-control" name="street"
-												id="street" path="street" placeholder="Rue" ng-model="street"/>
+												id="street" path="street" placeholder="Rue" />
 
 										</div>
 									</div>
@@ -306,11 +202,11 @@ function doAjaxPost() {
 										<div class="col-sm-3 col-xs-12 ">
 											<input type="text" class="form-control" name="postCode"
 												id="postCode" path="postCode" placeholder="Code postale" maxlength="5"
-												pattern="[0-9]{5}"  ng-model="zipCode"/>
+												pattern="[0-9]{5}" />
 										</div>
 										<div class="col-sm-9 col-xs-12 ">
 											<input type="text" class="form-control" name="city"
-												id="city" path="city" placeholder="Ville" ng-model="city"/>
+												id="city" path="city" placeholder="Ville" />
 
 										</div>
 									</div>
