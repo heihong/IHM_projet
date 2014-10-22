@@ -38,6 +38,7 @@ function doAjaxPost() {
 	      $('#street').val('');
 	      $('#postCode').val('');
 	      $('#city').val('');
+	      $('#addresslist').load(document.URL+' #addresslist');
 	    },  
 	    error: function(e){  
 	     
