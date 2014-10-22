@@ -59,7 +59,7 @@ public class NewContactController {
 		ContactDAO.getInstance().modifyContact(contact); 
 		model.addAttribute("contact", contact); // replace to call show detail contact
 		resetAddressList();
-		return "result";
+		return "contactDetail";
 	}
 	
 	@RequestMapping(value="/contactDetails",method=RequestMethod.GET)
@@ -69,7 +69,7 @@ public class NewContactController {
 		model.addAttribute("contact", contact);
 		
 		
-		return "result";
+		return "contactDetail";
 	}
 	
 	@RequestMapping(value="/deleteContact",method=RequestMethod.GET)
@@ -96,7 +96,7 @@ public class NewContactController {
 		model.addAttribute("contact", contact); 
 		
 
-		return "result"; // jsp file
+		return "contactDetail"; // jsp file
 	}
 	
 	private void resetAddressList () {

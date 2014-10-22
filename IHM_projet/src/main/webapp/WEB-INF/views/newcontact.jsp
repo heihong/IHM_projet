@@ -41,6 +41,8 @@ function doAjaxPost() {
 	      $('#street').val('');
 	      $('#postCode').val('');
 	      $('#city').val('');
+	      $('#addresslist').append("test");
+	      $('#addresslist').load(document.URL+' #addresslist');
 	    },  
 	    error: function(e){  
 	      alert('Error: ' + e);  
@@ -145,7 +147,9 @@ function doAjaxPost() {
 					</div>
 					</form:form>
 					
-					
+					<div id="addresslist">
+						
+						</div>
 					
 					
 					
@@ -234,9 +238,9 @@ function doAjaxPost() {
 						<div class="col-sm-12">
 							<div class="form-actions">
 								<div class="pull-right">
-									<button type="reset" class="btn btn-danger">
+									<a type="reset" class="btn btn-danger" href="showContactList">
 										<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Annuler
-									</button>
+									</a>
 									&nbsp;
 									<button type="submit" form="newContactForm" class="btn btn-success">
 										<span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Enregistrer
