@@ -38,7 +38,8 @@ function doAjaxPost() {
 	      $('#street').val('');
 	      $('#postCode').val('');
 	      $('#city').val('');
-	      $('#addresslist').load(document.URL+' #addresslist');
+	      $('#addresslist').append('<div class="col-sm-2"><b>Adresse : </b></div><div class="col-sm-10">'+option+' - '+number+' '+street+' - '+postCode+' '+city+'</div><br />');
+	 	 
 	    },  
 	    error: function(e){  
 	     
