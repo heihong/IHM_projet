@@ -75,7 +75,7 @@ public class NewContactController {
 	{
 		
 		((Contact) ContactDAO.getInstance().getActivatedContacts().get(id)).removeContact();	// we remove the contact (logical delete set the boolean active to false)
-		
+		model.addAttribute("listContactsJson", getJsonContactList()); 
 		model.addAttribute("delete", true); 
 		
 		return "listecontact";
@@ -102,6 +102,15 @@ public class NewContactController {
 	@RequestMapping(value = "/showContactList", method = RequestMethod.GET) 
 	public String showContactList(Model model)
 	{
+		
+		
+		model.addAttribute("listContactsJson", getJsonContactList()); // link to $Listcontacts
+		
+		return "listecontact"; // jsp file
+	}
+	
+	 
+	private String getJsonContactList () {
 		/*Convert the Map into a list*/
 		Map contactMap = ContactDAO.getInstance().getActivatedContacts();
 		List<Contact> sortedContacts = new ArrayList<Contact>(contactMap.values());	
@@ -111,15 +120,10 @@ public class NewContactController {
 		
 		// change data to JSON
 		Gson gson = new Gson();
-		String listContactsJson = gson.toJson(sortedContacts);
 		
-		model.addAttribute("listContactsJson", listContactsJson); // link to $Listcontacts
+		return gson.toJson(sortedContacts);
 		
-		return "listecontact"; // jsp file
 	}
-	
-	 
-	
 	
 	@RequestMapping(value="/AddAddress.htm",method=RequestMethod.POST)
 	public @ResponseBody String AddAddress(@ModelAttribute(value="address") Address address, BindingResult result,Model model ){

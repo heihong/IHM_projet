@@ -20,23 +20,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<script>
 
-$(document).ready(function(){
-	var colors = ['#69A3D6', '#CCE45A', '#EEB451', '#E86957', '#8C89B6', '#8FAFA5', '#C778BF' ,'#8E9EB0' ,'#8CB39C' ,'#A3C47B' , '#BFA980'];
-	
-	$(".randomColor").each(function() {
-		
-		var index = Math.floor(Math.random() * colors.length);
-		var color = colors[index];
-	   
-	    $(this).css("background-color", color);
-	});
-	
-	
-	
-	});
-</script>
 </head>
 <body  ng-controller="listContactController">
 
@@ -134,7 +118,7 @@ $(document).ready(function(){
 					<ul class="media-list" >
 						<li class="media">
 						<div class="imageAndText pull-left" style="position: relative;">
-							<img class="randomColor img-circle media-object" width="64" height="64" style="border: 1px solid #428bca;">
+							<img class="img-circle media-object" width="64" height="64" style="border: 1px solid #428bca; background-color: {{listContact.color}};">
 							<div class="col" style="position: absolute; z-index: 1; top: 2px; left: 3px; text-align: center; color: #ffffff; font-size: 42px;">
 								<div class="col-sm-4">
 						            <p>{{listContact.firstName.charAt(0).toUpperCase()}}</p>
