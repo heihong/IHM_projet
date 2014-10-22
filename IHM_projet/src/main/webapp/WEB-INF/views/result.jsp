@@ -99,7 +99,7 @@
 
 						</div>
 					</div>
-					<c:forEach items="${Listaddress}" var="address">
+					<c:forEach items="${contact.addressList}" var="address">
 						<div>
 							<div class="form-group"
 								style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">

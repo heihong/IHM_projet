@@ -28,13 +28,13 @@ import dao.ContactDAO;
 @Controller
 public class NewContactController {
 	
-	 
-
+	private List<Address> addressList;
+	private int numberAddress=0;
 	
 	@RequestMapping(value = "/newContact",method = RequestMethod.GET)
 	public String newContact(Model model){
 		model.addAttribute("contact", new Contact()); //link to the view
-		
+		addressList = new ArrayList<Address>(); 
 		return "newcontact";// jsp file
 	}
 	
@@ -87,9 +87,10 @@ public class NewContactController {
 			   Model model)
 	{
 		contact.setId(ContactDAO.getInstance().getActivatedContacts().size());// edit id
+		contact.setAddressList((ArrayList<Address>) addressList);
 		ContactDAO.getInstance().addContact(ContactDAO.getInstance().getActivatedContacts().size(),contact); 	// add the new contact to the "database"
 		
-	//	System.out.println(contact.getAddressList().get(0).getNumber());
+	
 		
 		model.addAttribute("contact", contact); 
 		
@@ -117,16 +118,15 @@ public class NewContactController {
 		return "listecontact"; // jsp file
 	}
 	
-	//Address
-	List<Address> addressList = new ArrayList<Address>(); 
-	int i=0;
+	 
+	
 	
 	@RequestMapping(value="/AddAddress.htm",method=RequestMethod.POST)
 	public @ResponseBody String AddAddress(@ModelAttribute(value="address") Address address, BindingResult result,Model model ){
 		String returnText;
 		if(!result.hasErrors()){
 			addressList.add(address);
-			returnText =addressList.get(i++).getOption() + " et vous avez entrer "+ addressList.size() + " adresse" ;
+			returnText =addressList.get(numberAddress++).getOption() + " et vous avez entrer "+ addressList.size() + " adresse" ;
 		}else{
 			returnText = "Sorry, an error has occur. User has not been added to list.";
 		}
