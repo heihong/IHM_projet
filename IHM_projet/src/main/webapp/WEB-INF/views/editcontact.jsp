@@ -174,6 +174,9 @@ function doAjaxPost() {
 								<div class="col-sm-9 col-md-10">
 									<p class="form-control-static">${address.postCode}</p>
 								</div>
+								<a href="showContactList" class="btn btn-danger">
+										<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Supprimer
+								</a>
 							</div>
 					</c:forEach>
 						
