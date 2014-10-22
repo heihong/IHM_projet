@@ -103,6 +103,8 @@ public class NewContactController {
 		addressList = new ArrayList<Address>(); 
 		numberAddress = 0;
 	}
+	
+
 
 	@RequestMapping(value = "/showContactList", method = RequestMethod.GET) 
 	public String showContactList(Model model)
