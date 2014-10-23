@@ -15,15 +15,6 @@
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
-<style>
-.body {
-	padding-top: 70px
-}
-</style>		<style>
-.body {
-	padding-top: 70px
-}
-</style>
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" >Contact Manager</a>

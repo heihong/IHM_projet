@@ -113,7 +113,7 @@
 		</div>
 		
 			<div ng-repeat="listContact in listContacts  | searchitem:search">
-			<div class="row" style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
+			<div class="row border-address">
 				<div class="col-md-12">
 					<ul class="media-list" >
 						<li class="media">

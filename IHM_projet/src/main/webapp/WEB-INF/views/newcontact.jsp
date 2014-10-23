@@ -42,7 +42,41 @@ function doAjaxPost() {
 	      $('#postCode').val('');
 	      $('#city').val('');
 	      
-	      $('#addresslist').append('<div class="col-sm-2"><b>Adresse : </b></div><div class="col-sm-10">'+option+' - '+number+' '+street+' - '+postCode+' '+city+'</div><br />');
+	      $('#addresslist').append('<div class="container border-address">'
+	    		  					+'<div class="col-sm-3 col-md-2">'
+	    		  					+'<label for="inputkindadress" class="control-label">Type d\'adresse :</label>'
+	    		  					+'</div>'
+	    		  					+'<div class="col-sm-9 col-md-10">'
+	    		  					+'<p class="form-control-static">'
+	    		  					+option
+	    		  					+'</p></div>'
+	    		  					+'<div class="col-sm-3 col-md-2 col-xs-12">'
+	    		  					+'<label for="inputNumber" class="control-label">N° et voie :</label>'
+	    		  					+'</div>'
+	    		  					+'<div class="col-sm-9  col-md-10 col-xs-12">'
+	    		  					+'<div class="row">'
+	    		  					+'<div class="col-sm-3 col-xs-12 ">'
+	    		  					+'<p class="form-control-static">'
+	    		  					+number
+	    		  					+'</p></div>'
+	    		  					+'<div class="col-sm-9 col-xs-12 ">'
+	    		  					+'<p class="form-control-static">'
+	    		  					+street
+	    		  					+'</p></div></div></div>'
+	    		  					+'<div class="col-sm-3 col-md-2">'
+									+'<label for="inputPostCode" class="control-label">CP et ville :</label>'
+									+'</div>'
+									+'<div class="col-sm-9 col-md-10 col-xs-12">'
+									+'<div class="row">'
+									+'<div class="col-sm-3 col-xs-12 ">'
+									+'<p class="form-control-static">'
+									+postCode
+									+'</p></div>'
+									+'<div class="col-sm-9 col-xs-12 ">'
+									+'<p class="form-control-static">'
+									+city
+									+'</p></div></div></div>'
+	    		  					+'</div>');
 	    },  
 	    error: function(e){  
 	      alert('Error: ' + e);  
@@ -59,13 +93,6 @@ function doAjaxPost() {
 </head>
 <body ng-controller="newContactController">
 	<div class="navbar navbar-default navbar-static-top">
-		<style>
-.body {
-	padding-top: 70px
-}
-
-
-</style>
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" >Contact Manager</a>
@@ -118,9 +145,7 @@ function doAjaxPost() {
         					<button class="btn btn-default glyphicon glyphicon-calendar" ng-click="open()"></button>
       							</span>
     						</div><!-- /input-group -->
-						
-							
-       
+
                
 </div>
 					</div>
@@ -152,21 +177,17 @@ function doAjaxPost() {
 						</div>
 					
 					
-					
-					
-					
 				<form:form method="post" action="#" id="newAddressForm"
 					 class="form-horizontal">	
 					
-					  <div id="wrap" > <!-- http://plnkr.co/edit/2UFfaG?p=preview -->
+					  <div id="wrap" >
  						<div class="container">
 			
             
             
 					  
 						<div>
-							<div class="form-group"
-								style="outline: 1px solid #428bca; margin: 1px; padding: 20px 5px 20px 5px;">
+							<div class="form-group border-address">
 								<div class="col-sm-3 col-md-2">
 									<label for="inputkindadress" class="control-label">Type
 										d'adresse :</label>

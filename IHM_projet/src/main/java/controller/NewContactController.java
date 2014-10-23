@@ -149,7 +149,6 @@ public class NewContactController {
 		String returnText;
 		if(!result.hasErrors()){
 			addressList.remove(id);
-			
 			returnText = "" ;
 		}else{
 			returnText = "Sorry, an error has occur. User has not been added to list.";
